@@ -9,10 +9,13 @@
 
 a {
 	text-decoration: none;
+	color: $white;
 }
 
 body {
 	background-color: $bg-black;
+	color: $white;
+	letter-spacing: 3px;
 }
 
 input,
@@ -28,5 +31,5 @@ input:focus {
 
 @font-face {
 	font-family: 'Helvetica Neue Light';
-	src: url('./fonts/HelveticaNeueCyr-Light.woff2') format('woff2');
+	src: url('./fonts/Helvetica\ Neue\ Light.woff2') format('woff2');
 }

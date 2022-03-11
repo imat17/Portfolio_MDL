@@ -1,0 +1,31 @@
+header {
+	margin-top: 3rem;
+	position: relative;
+	box-shadow: 1px 7px 5px -1px rgba(0, 0, 0, 0.2);
+	padding-bottom: 45px;
+	div {
+		position: absolute;
+		left: 3rem;
+		top: -0.4rem;
+	}
+	ul {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: 'Helvetica Neue Light', 'Helvetica', 'Arial';
+		display: flex;
+		li {
+			transition: transform 0.3s;
+			margin-left: 3rem;
+			margin-right: 3rem;
+			font-size: 20px;
+			cursor: pointer;
+		}
+		li:hover {
+			transform: scale(1.08);
+		}
+	}
+    span {
+        display: none;
+    }
+}
