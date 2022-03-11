@@ -1,0 +1,16 @@
+.skills__grid {
+    margin-top: 4rem;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 1fr 1fr;
+    .skill {
+        .img__container {
+            max-width: 150px;
+            img {
+                width: 100%;
+                
+            }
+        }
+    }
+}

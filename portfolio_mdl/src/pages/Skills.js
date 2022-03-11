@@ -1,12 +1,11 @@
 import React from 'react';
-import Header from '../components/Header';
+import SkillsList from '../components/SkillsList';
 
 const Skills = () => {
-	return (
-		<>
-			<Header />
-		</>
-	);
+	return <section id='section__two'>
+		<h3>Mes compétences</h3>
+		<SkillsList />
+	</section>;
 };
 
 export default Skills;

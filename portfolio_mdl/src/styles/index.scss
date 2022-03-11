@@ -3,5 +3,9 @@
 @import './utils/mixins';
 @import './utils/keyframes';
 
-@import './components/header';
+@import './components/navbar';
+@import './components/scroll';
+@import './pages/home';
+@import './pages/skills';
+@import './components/skillsList';
 @import './components/homeText';

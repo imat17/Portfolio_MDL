@@ -1,17 +1,21 @@
 .container__text {
-	max-width: 70%;
+	max-width: 60%;
 	margin-left: 5rem;
-	margin-top: 10rem;
+    padding-top: 15rem;
 	font-family: 'Helvetica Neue Light', 'Helvetica', 'Arial';
 	p {
-		margin-bottom: 1.5rem;
+		margin-bottom: 2rem;
 	}
 	p:nth-child(1) {
-		font-size: 50px;
+		font-size: 60px;
 	}
 	p:nth-child(2) {
-		font-size: 25px;
+		font-size: 30px;
 	}
+	p:nth-child(3) {
+		font-size: 20px;
+	}
+	
 }
 
 .typewriter__container {
@@ -21,23 +25,25 @@
 		overflow: hidden;
 		white-space: nowrap;
 		position: relative;
-		animation: typing 2.9s steps(24);
+		animation: typing 3s steps(40);
 	}
-    .typewriter p::after {
-        content: '';
-        position: absolute;
-        display: block;
-        height: 100%;
-        width: 1px;
-        background: #dadada;
-        right: 0;
-        top: 0;
-        animation: cursor 1s infinite;
-    }
+	.typewriter p::after {
+		content: '';
+		position: absolute;
+		display: block;
+		height: 100%;
+		width: 1px;
+		background: #dadada;
+		right: 0;
+		top: 0;
+		animation: cursor 1s infinite;
+	}
 }
-
 .scroll__bottom {
+    height: 75px;
+    width: 50px;
 	margin: auto;
+    cursor: pointer;
 	img {
 		width: 50px;
 	}

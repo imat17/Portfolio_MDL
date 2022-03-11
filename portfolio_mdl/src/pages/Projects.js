@@ -1,12 +1,9 @@
 import React from 'react';
-import Header from '../components/Header';
 
 const Projects = () => {
-	return (
-		<>
-			<Header />
-		</>
-	);
+	return <section id='section__three'>
+		
+	</section>;
 };
 
 export default Projects;

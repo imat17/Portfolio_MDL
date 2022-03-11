@@ -1,23 +1,21 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 import Logo from '../images/logo_mdl.png';
 import List from '../images/icons/bars-solid.svg';
 
 const Header = () => {
 	return (
-		<header>
-			<NavLink to='/'>
-				<div>
-					<img src={Logo} alt='Logo' title='logo mdl' />
-				</div>
-			</NavLink>
+		<nav>
+			<a className='link__home' href='#section__one'>
+				<img src={Logo} alt='Logo' title='logo mdl' />
+			</a>
+
 			<ul>
-				<NavLink to='/skills'>
+				<a href='#section__two'>
 					<li>COMPETENCES</li>
-				</NavLink>
-				<NavLink to='/projects'>
+				</a>
+				<a href='#section__three'>
 					<li>PROJETS</li>
-				</NavLink>
+				</a>
 				<a href='mailto:davailleleroy.matisse@gmail.com'>
 					<li>CONTACT</li>
 				</a>
@@ -25,7 +23,7 @@ const Header = () => {
 			<span>
 				<img src={List} alt='nav list' />
 			</span>
-		</header>
+		</nav>
 	);
 };
 

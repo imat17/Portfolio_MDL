@@ -1,9 +1,11 @@
-header {
-	margin-top: 3rem;
-	position: relative;
+nav {
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+	margin-top: 2rem;
 	box-shadow: 1px 7px 5px -1px rgba(0, 0, 0, 0.2);
 	padding-bottom: 45px;
-	div {
+	.link__home {
 		position: absolute;
 		left: 3rem;
 		top: -0.4rem;
@@ -25,7 +27,7 @@ header {
 			transform: scale(1.08);
 		}
 	}
-    span {
-        display: none;
-    }
+	span {
+		display: none;
+	}
 }
