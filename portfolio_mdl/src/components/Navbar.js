@@ -11,13 +11,22 @@ const Header = () => {
 
 			<ul>
 				<a href='#section__two'>
-					<li>COMPETENCES</li>
+					<li>COMPETENCES
+					<p className="border"></p>
+					</li>
+					
 				</a>
 				<a href='#section__three'>
-					<li>PROJETS</li>
+					<li>PROJETS
+					<p className="border"></p>
+					</li>
+					
 				</a>
 				<a href='mailto:davailleleroy.matisse@gmail.com'>
-					<li>CONTACT</li>
+					<li>CONTACT
+					<p className="border"></p>
+					</li>
+					
 				</a>
 			</ul>
 			<span>

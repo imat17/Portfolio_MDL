@@ -25,6 +25,16 @@ nav {
 		}
 		li:hover {
 			transform: scale(1.08);
+			.border {
+				visibility: visible;
+				animation: scale-up-hor-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+			}
+		}
+		.border {
+			margin-top: 5px;
+			border-bottom: 2px solid $red;
+			width: 100%;
+			visibility: hidden;
 		}
 	}
 	span {

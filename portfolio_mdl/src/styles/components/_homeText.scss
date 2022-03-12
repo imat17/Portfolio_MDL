@@ -1,7 +1,7 @@
 .container__text {
 	max-width: 60%;
 	margin-left: 5rem;
-    padding-top: 15rem;
+    padding-top: 15%;
 	font-family: 'Helvetica Neue Light', 'Helvetica', 'Arial';
 	p {
 		margin-bottom: 2rem;
@@ -37,14 +37,5 @@
 		right: 0;
 		top: 0;
 		animation: cursor 1s infinite;
-	}
-}
-.scroll__bottom {
-    height: 75px;
-    width: 50px;
-	margin: auto;
-    cursor: pointer;
-	img {
-		width: 50px;
 	}
 }
