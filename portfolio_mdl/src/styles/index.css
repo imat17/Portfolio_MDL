@@ -197,7 +197,7 @@ nav span {
   bottom: 0;
   right: 0;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   -webkit-animation-name: slideInRight;
   animation-name: slideInRight;
@@ -206,8 +206,8 @@ nav span {
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
 }
-.social a:nth-child(2) {
-  padding-top: 2px;
+.social a:nth-child(2) img {
+  width: 37px;
 }
 .social img {
   width: 30px;
@@ -418,7 +418,7 @@ nav span {
 }
 .projects li .projects__img {
   padding-top: 2rem;
-  width: 25rem;
+  max-width: 30rem;
 }
 .projects li .projects__img img {
   width: 100%;

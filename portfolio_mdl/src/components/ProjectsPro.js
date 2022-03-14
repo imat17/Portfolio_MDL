@@ -2,22 +2,20 @@ import React from 'react';
 import { FormationData } from '../data/FormationData';
 import Carousel from 'react-elastic-carousel';
 
-const ProjectsPro = () => {
-	console.log(FormationData);
-
+const ProjectsPro = (props) => {
 	return (
 		<div className='projects'>
-			<Carousel itemsToScroll={1} itemsToShow={3}>
+			<Carousel itemsToScroll={1} itemsToShow={3} breakPoints={props.breakPoints}>
 				{FormationData.map((project) => (
 					<li key={project.id}>
 						<h5>{project.name}</h5>
-						<div className='projects__img'>
+						<a className='projects__img' href={project.source} target='_blank' rel='noreferrer'>
 							<img src={project.picture} alt='Logo projet' />
-						</div>
+						</a>
 						<p>{project.info}</p>
 						<div className='icons'>
 							{project.languagesIcons.map((icon) => (
-								<i className={icon} key={icon}></i>
+								<img src={icon} alt='Icon Language' />
 							))}
 						</div>
 						<a href={project.source} target='_blank' rel='noreferrer'>
