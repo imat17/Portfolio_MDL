@@ -1,5 +1,5 @@
 import React from 'react';
-// import Routes from './components/Routes';
+import Social from './components/Social';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Skills from './pages/Skills';
@@ -9,6 +9,7 @@ const App = () => {
 	return (
 		<>
 			<Navbar />
+			<Social />
 			<div className='container__global'>
 				<Home />
 				<Skills />

@@ -1,15 +1,12 @@
 import React from 'react';
-
 import HomeText from '../components/HomeText';
-import ScrollB from '../images/icons/scroll_bottom.png';
+import ScrollDown from '../components/ScrollDown';
 
 const Home = () => {
 	return (
 		<section id='section__one'>
 			<HomeText />
-			<a className='scroll__bottom' href='#section__two'>
-				<img src={ScrollB} alt='' />
-			</a>
+			<ScrollDown />
 		</section>
 	);
 };

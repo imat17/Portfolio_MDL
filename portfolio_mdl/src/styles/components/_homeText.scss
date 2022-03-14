@@ -11,9 +11,11 @@
 	}
 	p:nth-child(2) {
 		font-size: 30px;
+		animation: focus-in-expand 2.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s both;
 	}
 	p:nth-child(3) {
 		font-size: 20px;
+		animation: focus-in-expand 2.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s both;
 	}
 	
 }

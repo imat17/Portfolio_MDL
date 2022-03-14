@@ -49,6 +49,20 @@
 	}
 }
 
+@keyframes focus-in-expand {
+	0% {
+		letter-spacing: -0.5em;
+		-webkit-filter: blur(12px);
+		filter: blur(12px);
+		opacity: 0;
+	}
+	100% {
+		-webkit-filter: blur(0px);
+		filter: blur(0px);
+		opacity: 1;
+	}
+}
+
 @keyframes line {
 	to {
 		width: 100%;
@@ -80,11 +94,11 @@
 
 @keyframes scale-up-hor-center {
 	0% {
-	  -webkit-transform: scaleX(0.4);
-			  transform: scaleX(0.4);
+		-webkit-transform: scaleX(0.4);
+		transform: scaleX(0.4);
 	}
 	100% {
-	  -webkit-transform: scaleX(1);
-			  transform: scaleX(1);
+		-webkit-transform: scaleX(1);
+		transform: scaleX(1);
 	}
-  }
+}
