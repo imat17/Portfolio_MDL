@@ -1,7 +1,8 @@
 import React from 'react';
+import { useInView } from 'react-intersection-observer';
 
 const ProgressBar = (props) => {
-	console.log(props);
+	const { ref, inView } = useInView();
 	return (
 		<div className='languages'>
 			<h3>Languages</h3>
@@ -19,7 +20,7 @@ const ProgressBar = (props) => {
 					return (
 						<div key={item.id} className='languagesList'>
 							<li>{item.value}</li>
-							<div className='progressBar' style={{ width: progressBar }}></div>
+							<div className='progressBar' style={{ width: progressBar }} ref={ref}></div>
 						</div>
 					);
 				})}

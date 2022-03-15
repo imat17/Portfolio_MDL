@@ -5,23 +5,28 @@ nav {
 	margin-top: 2rem;
 	box-shadow: 1px 7px 5px -1px rgba(0, 0, 0, 0.2);
 	padding-bottom: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	.link__home {
 		position: absolute;
 		left: 3rem;
 		top: -0.4rem;
+		@include responsiveNavLogo;
 	}
 	ul {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		font-family: 'Helvetica Neue Light', 'Helvetica', 'Arial';
-		display: flex;
+		@include responsiveNavbarDisplay;
 		li {
 			transition: transform 0.3s;
 			margin-left: 3rem;
 			margin-right: 3rem;
 			font-size: 20px;
 			cursor: pointer;
+			@include responsiveNavbarSize;
 		}
 		li:hover {
 			transform: scale(1.08);
@@ -39,5 +44,25 @@ nav {
 	}
 	span {
 		display: none;
+	}
+	.nav__responsive {
+		cursor: pointer;
+		position: absolute;
+		top: .1rem;
+		right: 3rem;
+	}
+}
+
+.navbar__mobile {
+	position: absolute;
+	top: 1.5rem;
+	right: 0;
+	z-index: 999;
+	border: 2px solid $red;
+	width: 150px;
+	font-size: 20px;
+	ul {
+		display: flex;
+		flex-direction: column;
 	}
 }

@@ -3,17 +3,21 @@
 	margin-left: 5rem;
     padding-top: 15%;
 	font-family: 'Helvetica Neue Light', 'Helvetica', 'Arial';
+	@include responsiveHomeText;
 	p {
 		margin-bottom: 2rem;
 	}
 	p:nth-child(1) {
 		font-size: 60px;
+		@include responsiveHelloText;
 	}
 	p:nth-child(2) {
+		@include responsiveIamText;
 		font-size: 30px;
 		animation: focus-in-expand 2.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 2s both;
 	}
 	p:nth-child(3) {
+		@include responsiveInfoText;
 		font-size: 20px;
 		animation: focus-in-expand 2.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) 3s both;
 	}
@@ -27,7 +31,7 @@
 		overflow: hidden;
 		white-space: nowrap;
 		position: relative;
-		animation: typing 3s steps(40);
+		animation: typing 3s steps(29);
 	}
 	.typewriter p::after {
 		content: '';
@@ -39,5 +43,16 @@
 		right: 0;
 		top: 0;
 		animation: cursor 1s infinite;
+	}
+}
+
+.letter {
+	z-index: -1;
+	position: absolute;
+	width: 70rem;
+	right: 50px;
+	top: -50px;
+	img {
+		width: 100%;
 	}
 }

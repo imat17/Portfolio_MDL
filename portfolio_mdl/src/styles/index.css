@@ -149,18 +149,30 @@ nav {
   margin-top: 2rem;
   box-shadow: 1px 7px 5px -1px rgba(0, 0, 0, 0.2);
   padding-bottom: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 nav .link__home {
   position: absolute;
   left: 3rem;
   top: -0.4rem;
 }
+@media screen and (max-width: 615px) {
+  nav .link__home {
+    position: initial;
+  }
+}
 nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
   font-family: "Helvetica Neue Light", "Helvetica", "Arial";
-  display: flex;
+}
+@media screen and (max-width: 615px) {
+  nav ul {
+    display: none;
+  }
 }
 nav ul li {
   transition: transform 0.3s;
@@ -168,6 +180,13 @@ nav ul li {
   margin-right: 3rem;
   font-size: 20px;
   cursor: pointer;
+}
+@media screen and (max-width: 940px) {
+  nav ul li {
+    font-size: 16px;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
 }
 nav ul li:hover {
   transform: scale(1.08);
@@ -184,6 +203,26 @@ nav ul .border {
 }
 nav span {
   display: none;
+}
+nav .nav__responsive {
+  cursor: pointer;
+  position: absolute;
+  top: 0.1rem;
+  right: 3rem;
+}
+
+.navbar__mobile {
+  position: absolute;
+  top: 1.5rem;
+  right: 0;
+  z-index: 999;
+  border: 2px solid #7d1c32;
+  width: 150px;
+  font-size: 20px;
+}
+.navbar__mobile ul {
+  display: flex;
+  flex-direction: column;
 }
 
 .social {
@@ -314,12 +353,6 @@ nav span {
   height: 35rem;
   border-right: none;
   grid-area: C;
-  -webkit-animation-name: slideInRight;
-  animation-name: slideInRight;
-  -webkit-animation-duration: 1.5s;
-  animation-duration: 1.5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
 }
 .others__skills h3 {
   padding-bottom: 5rem;
@@ -337,11 +370,33 @@ nav span {
 .others__skills .others__list ul li {
   padding: 20px;
 }
+.reveal__others {
+  -webkit-animation-name: slideInRight;
+  animation-name: slideInRight;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
 .container__text {
   max-width: 60%;
   margin-left: 5rem;
   padding-top: 15%;
   font-family: "Helvetica Neue Light", "Helvetica", "Arial";
+}
+@media screen and (max-width: 1250px) {
+  .container__text {
+    max-width: 100% !important;
+    padding-top: 25%;
+    margin-left: 1rem;
+    margin-right: 0.5rem;
+  }
+}
+@media screen and (max-width: 585px) {
+  .container__text {
+    padding-top: 55%;
+  }
 }
 .container__text p {
   margin-bottom: 2rem;
@@ -349,13 +404,102 @@ nav span {
 .container__text p:nth-child(1) {
   font-size: 60px;
 }
+@media screen and (max-width: 1250px) {
+  .container__text p:nth-child(1) {
+    font-size: 50px;
+  }
+}
+@media screen and (max-width: 1020px) {
+  .container__text p:nth-child(1) {
+    font-size: 40px;
+  }
+}
+@media screen and (max-width: 825px) {
+  .container__text p:nth-child(1) {
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .container__text p:nth-child(1) {
+    font-size: 25px;
+    font-family: "Helvetica Neue Bold", "Helvetica", "Arial";
+  }
+}
+@media screen and (max-width: 450px) {
+  .container__text p:nth-child(1) {
+    font-size: 20px;
+    font-family: "Helvetica Neue Bold", "Helvetica", "Arial";
+  }
+}
+@media screen and (max-width: 385px) {
+  .container__text p:nth-child(1) {
+    font-size: 18px;
+    font-family: "Helvetica Neue Bold", "Helvetica", "Arial";
+  }
+}
+@media screen and (max-width: 340px) {
+  .container__text p:nth-child(1) {
+    font-size: 16px;
+    font-family: "Helvetica Neue Bold", "Helvetica", "Arial";
+  }
+}
 .container__text p:nth-child(2) {
   font-size: 30px;
   animation: focus-in-expand 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
 }
+@media screen and (max-width: 1250px) {
+  .container__text p:nth-child(2) {
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 1020px) {
+  .container__text p:nth-child(2) {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .container__text p:nth-child(2) {
+    font-size: 18px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .container__text p:nth-child(2) {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 340px) {
+  .container__text p:nth-child(2) {
+    font-size: 14px;
+  }
+}
 .container__text p:nth-child(3) {
   font-size: 20px;
   animation: focus-in-expand 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 3s both;
+}
+@media screen and (max-width: 1250px) {
+  .container__text p:nth-child(3) {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 1020px) {
+  .container__text p:nth-child(3) {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .container__text p:nth-child(3) {
+    font-size: 16px;
+  }
+}
+@media screen and (max-width: 370px) {
+  .container__text p:nth-child(3) {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 340px) {
+  .container__text p:nth-child(3) {
+    font-size: 12px;
+  }
 }
 
 .typewriter__container {
@@ -366,7 +510,7 @@ nav span {
   overflow: hidden;
   white-space: nowrap;
   position: relative;
-  animation: typing 3s steps(40);
+  animation: typing 3s steps(29);
 }
 .typewriter__container .typewriter p::after {
   content: "";
@@ -378,6 +522,17 @@ nav span {
   right: 0;
   top: 0;
   animation: cursor 1s infinite;
+}
+
+.letter {
+  z-index: -1;
+  position: absolute;
+  width: 70rem;
+  right: 50px;
+  top: -50px;
+}
+.letter img {
+  width: 100%;
 }
 
 #section__three {
@@ -401,9 +556,27 @@ nav span {
 #section__three .projects__choise p {
   cursor: pointer;
 }
+#section__three .projects__choise .active {
+  transform: scale(1.2);
+}
 
 .projects {
   margin-top: 5rem;
+  padding: 10px;
+}
+.projects .rec.rec-arrow {
+  color: #f1f1f1;
+  background-color: #7d1c32;
+}
+.projects .rec.rec-arrow:hover {
+  color: #7d1c32;
+  background-color: #f1f1f1;
+}
+.projects .rec.rec-dot {
+  background-color: #7d1c32;
+}
+.projects .rec.rec-dot:active, .projects .rec.rec-dot :hover {
+  box-shadow: 0 0 1px 3px #7d1c32;
 }
 .projects li {
   display: flex;

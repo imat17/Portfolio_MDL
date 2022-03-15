@@ -1,35 +1,37 @@
 .others__skills {
-    font-family: "Helvetica Neue Bold", "Helvetica";
-    // box-shadow: -5px 5px 5px 1px rgba(0, 0, 0, 0.2);
-    border: 2px solid $red;
-    border-radius: 10px 0 0 10px;
-    height: 35rem;
-    border-right: none;
+	font-family: 'Helvetica Neue Bold', 'Helvetica';
+	border: 2px solid $red;
+	border-radius: 10px 0 0 10px;
+	height: 35rem;
+	border-right: none;
 	grid-area: C;
+	h3 {
+		padding-bottom: 5rem;
+	}
+	.others__list {
+		display: flex;
+		width: 80%;
+		height: 100%;
+		margin: 0 auto;
+		justify-content: space-between;
+
+		ul {
+			width: 80%;
+			li {
+				padding: 20px;
+			}
+			i {
+				// color: $;
+			}
+		}
+	}
+}
+
+.reveal__others {
 	-webkit-animation-name: slideInRight;
 	animation-name: slideInRight;
 	-webkit-animation-duration: 1.5s;
 	animation-duration: 1.5s;
 	-webkit-animation-fill-mode: both;
 	animation-fill-mode: both;
-    h3 {
-        padding-bottom: 5rem;
-    }
-    .others__list {
-        display: flex;
-        width: 80%;
-        height: 100%;
-        margin: 0 auto;
-        justify-content: space-between;
-
-        ul {
-            width: 80%;
-            li {
-                padding: 20px;
-            }
-            i {
-                // color: $;
-            }
-        }
-    }
 }

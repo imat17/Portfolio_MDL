@@ -1,11 +1,12 @@
 import React from 'react';
-
+import M from '../images/icons/letter-m.png';
 const HomeText = () => {
 	return (
+		<>
 		<div className='container__text'>
 			<div className='typewriter__container'>
 				<div className='typewriter'>
-					<p>Bonjour et bienvenue sur mon portfolio !</p>
+					<p>Bienvenue sur mon portfolio !</p>
 				</div>
 			</div>
 			<p>Je suis Matisse Davaille-Leroy, développeur React.</p>
@@ -14,6 +15,10 @@ const HomeText = () => {
 				N'hésitez pas à télécharger mon CV et à me contacter.
 			</p>
 		</div>
+		<div className="letter">
+			<img src={M} alt="" />
+		</div>
+		</>
 	);
 };
 

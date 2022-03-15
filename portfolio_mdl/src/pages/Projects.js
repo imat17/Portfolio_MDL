@@ -3,6 +3,26 @@ import ProjectsPerso from '../components/ProjectsPerso';
 import ProjectsPro from '../components/ProjectsPro';
 
 const Projects = () => {
+	const [projectPro, setProjectPro] = useState(true);
+	const [projectPerso, setProjectPerso] = useState(false);
+
+	const pro = document.querySelector('#pro');
+	const perso = document.querySelector('#perso');
+
+	const handleProject = (e) => {
+		if (e.target.id === 'pro') {
+			setProjectPerso(false);
+			setProjectPro(true);
+			pro.classList.add('active');
+			perso.classList.remove('active');
+		} else if (e.target.id === 'perso') {
+			setProjectPerso(true);
+			setProjectPro(false);
+			perso.classList.add('active');
+			pro.classList.remove('active');
+		}
+	};
+
 	const breakPoints = [
 		{ width: 1, itemsToShow: 1 },
 		{ width: 550, itemsToShow: 1, itemsToScroll: 1, pagination: false },
@@ -12,12 +32,10 @@ const Projects = () => {
 		{ width: 1750, itemsToShow: 3 },
 	];
 
-	const [toggle, setToggle] = useState(false);
-
 	const projectsToggle = () => {
-		if (toggle === false) {
+		if (projectPro === true) {
 			return <ProjectsPro breakPoints={breakPoints} />;
-		} else if (toggle === true) {
+		} else if (projectPerso === true) {
 			return <ProjectsPerso breakPoints={breakPoints} />;
 		}
 	};
@@ -26,8 +44,12 @@ const Projects = () => {
 		<section id='section__three'>
 			<h3>Mes projets</h3>
 			<div className='projects__choise'>
-				<p onClick={() => setToggle(!toggle)}>Projets de formation</p>
-				<p onClick={() => setToggle(!toggle)}>Projets personnels</p>
+				<p id='pro' onClick={handleProject}>
+					Projets de formation
+				</p>
+				<p id='perso' onClick={handleProject}>
+					Projets personnels
+				</p>
 			</div>
 			{projectsToggle()}
 		</section>

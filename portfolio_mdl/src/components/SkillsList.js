@@ -3,6 +3,7 @@ import ProgressBar from './ProgressBar';
 import OtherSkills from './Otherskills';
 
 const SkillsList = () => {
+
 	let skills = [
 		{ id: 1, value: 'Javascript', xp: 0.9 },
 		{ id: 2, value: 'React', xp: 0.5 },

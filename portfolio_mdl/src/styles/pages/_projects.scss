@@ -17,5 +17,8 @@
         p {
             cursor: pointer;
         }
+		.active {
+			transform: scale(1.2);
+		}
 	}
 }
