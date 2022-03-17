@@ -1,5 +1,5 @@
 import React from 'react';
-import ScrollB from '../images/icons/scroll_bottom.png';
+import ScrollB from '../images/icons/scroll_bottom-bg.png';
 
 const ScrollDown = () => {
 	return (

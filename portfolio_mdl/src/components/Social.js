@@ -20,6 +20,3 @@ const Social = () => {
 };
 
 export default Social;
-
-
-{/* <i class="fa-solid fa-angles-left"></i> */}

@@ -1,11 +1,13 @@
 .languages {
-    grid-area: A;
-    padding-left: 2rem;
+	grid-area: A;
+	padding-left: 2rem;
 	letter-spacing: normal;
 	font-family: 'Helvetica Neue Bold', 'Helvetica';
+	max-width: 100%;
 	h3 {
 		padding-bottom: 5rem;
 		letter-spacing: 3px;
+		color: $white !important;
 	}
 	.years {
 		font-size: 0.85rem;
@@ -34,15 +36,12 @@
 	}
 	.languagesList {
 		padding-top: 0.7rem;
-		li {
-		}
 		.progressBar {
 			height: 0.4rem;
 			background: transparent;
 			border-radius: 50px;
 			margin-top: 0.2rem;
 			position: relative;
-
 			&:after {
 				content: '';
 				position: absolute;

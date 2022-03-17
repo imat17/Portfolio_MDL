@@ -1,37 +1,74 @@
 .others__skills {
 	font-family: 'Helvetica Neue Bold', 'Helvetica';
-	border: 2px solid $red;
-	border-radius: 10px 0 0 10px;
-	height: 35rem;
-	border-right: none;
-	grid-area: C;
+	grid-area: B;
 	h3 {
-		padding-bottom: 5rem;
+		color: $white !important;
 	}
 	.others__list {
+		padding-right: 2rem;
+		max-width: 100%;
 		display: flex;
-		width: 80%;
-		height: 100%;
-		margin: 0 auto;
-		justify-content: space-between;
-
+		flex-direction: column;
+		align-items: center;
 		ul {
-			width: 80%;
+			display: flex;
 			li {
-				padding: 20px;
-			}
-			i {
-				// color: $;
+				padding: 2rem;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				p {
+					padding-top: 1rem;
+					max-width: 100%;
+				}
 			}
 		}
 	}
 }
 
-.reveal__others {
-	-webkit-animation-name: slideInRight;
-	animation-name: slideInRight;
-	-webkit-animation-duration: 1.5s;
-	animation-duration: 1.5s;
-	-webkit-animation-fill-mode: both;
-	animation-fill-mode: both;
+.ko-progress-circle {
+	margin: 20px auto;
+	width: $circle-size;
+	height: $circle-size;
+
+	background-color: $circle-background;
+	border-radius: 50%;
+	.ko-progress-circle__slice,
+	.ko-progress-circle__fill {
+		width: $circle-size;
+		height: $circle-size;
+		position: absolute;
+		transition: transform $transition-length;
+		border-radius: 50%;
+	}
+	.ko-progress-circle__slice {
+		clip: rect(0px, $circle-size, $circle-size, $circle-size * 0.5);
+		.ko-progress-circle__fill {
+			clip: rect(0px, $circle-size * 0.5, $circle-size, 0px);
+			background-color: $red;
+		}
+	}
+	.ko-progress-circle__overlay {
+		width: $inset-size;
+		height: $inset-size;
+		position: absolute;
+		margin-left: ($circle-size - $inset-size) * 0.5;
+		margin-top: ($circle-size - $inset-size) * 0.5;
+		background-color: $inset-color;
+		border-radius: 50%;
+	}
+
+	@while $i <= 100 {
+		&[data-progress='#{$i}'] {
+			.ko-progress-circle__slice.full,
+			.ko-progress-circle__fill {
+				transform: rotate($increment * $i);
+			}
+			.ko-progress-circle__fill.ko-progress-circle__bar {
+				transform: rotate($increment * $i * 2);
+			}
+			$i: $i + 1;
+		}
+	}
 }

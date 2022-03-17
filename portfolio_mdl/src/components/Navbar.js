@@ -4,7 +4,6 @@ import List from '../images/icons/bars-solid.svg';
 
 const Header = () => {
 	const [toggle, setToggle] = useState(false);
-	const bars = document.querySelector('.nav__responsive');
 
 	const handleNav = () => {
 		if (toggle === false) {
@@ -13,26 +12,26 @@ const Header = () => {
 			return (
 				<>
 					<div className='navbar__mobile'>
-						<ul>
-							<a href='#section__two'>
+						<ul className="ul__mobile">
+							<a href='#section__two' className='anim-1'>
 								<li>
 									COMPETENCES
 									<p className='border'></p>
 								</li>
 							</a>
-							<a href='#section__three'>
+							<a href='#section__three' className='anim-2'>
 								<li>
 									PROJETS
 									<p className='border'></p>
 								</li>
 							</a>
-							<a href='mailto:davailleleroy.matisse@gmail.com'>
+							<a href='mailto:davailleleroy.matisse@gmail.com' className='anim-3'>
 								<li>
 									CONTACT
 									<p className='border'></p>
 								</li>
 							</a>
-							<div>
+							<div className='anim-4'>
 								<li>
 									CV
 									<p className='border'></p>

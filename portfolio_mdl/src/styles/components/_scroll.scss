@@ -1,18 +1,19 @@
 .scroll__bottom {
-    width: 50px;
-    height: 75px;
-    position: absolute;
-    bottom: 5vh;
-    right: 49vw;
-    &:hover {
-        -webkit-animation-name: bounce;
-        animation-name: bounce;
-        -webkit-transform-origin: center top;
-        -ms-transform-origin: center top;
-        transform-origin: center top;
-        -webkit-animation-duration: 1s;
-        animation-duration: 1s;
-        -webkit-animation-fill-mode: both;
-        animation-fill-mode: both;
-    }
+	width: 50px;
+	height: 75px;
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	transform: translate(-50%, -50%);
+	&:hover {
+		-webkit-animation-name: bounce;
+		animation-name: bounce;
+		-webkit-transform-origin: center top;
+		-ms-transform-origin: center top;
+		transform-origin: center top;
+		-webkit-animation-duration: 1s;
+		animation-duration: 1s;
+		-webkit-animation-fill-mode: both;
+		animation-fill-mode: both;
+	}
 }

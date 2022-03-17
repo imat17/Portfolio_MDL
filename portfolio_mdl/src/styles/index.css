@@ -19,7 +19,7 @@ a {
 body {
   background-color: #1d1d1d;
   color: #f1f1f1;
-  letter-spacing: 3px;
+  letter-spacing: 2px;
 }
 
 body::-webkit-scrollbar {
@@ -40,12 +40,8 @@ input:focus {
   font-family: "Helvetica Neue Light";
   src: url("./fonts/Helvetica Neue Light.woff2") format("woff2");
 }
-.container__global {
-  height: 100vh;
-}
-
 section {
-  width: 100%;
+  width: 100vw;
   height: 100vh;
 }
 
@@ -110,28 +106,6 @@ section {
     width: 100%;
   }
 }
-@-webkit-keyframes slideInRight {
-  0% {
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-    visibility: visible;
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
-@keyframes slideInRight {
-  0% {
-    -webkit-transform: translateX(100%);
-    transform: translateX(100%);
-    visibility: visible;
-  }
-  100% {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-  }
-}
 @keyframes scale-up-hor-center {
   0% {
     -webkit-transform: scaleX(0.4);
@@ -140,6 +114,49 @@ section {
   100% {
     -webkit-transform: scaleX(1);
     transform: scaleX(1);
+  }
+}
+@keyframes slideInDown {
+  0% {
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes tracking-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-700px);
+    transform: translateZ(-700px);
+    opacity: 0;
+  }
+  40% {
+    opacity: 0.6;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
   }
 }
 nav {
@@ -207,8 +224,18 @@ nav span {
 nav .nav__responsive {
   cursor: pointer;
   position: absolute;
-  top: 0.1rem;
+  top: 0.5rem;
   right: 3rem;
+}
+@media screen and (min-width: 615px) {
+  nav .nav__responsive {
+    display: none;
+  }
+}
+@media screen and (max-width: 615px) {
+  nav .nav__responsive {
+    display: block;
+  }
 }
 
 .navbar__mobile {
@@ -216,25 +243,59 @@ nav .nav__responsive {
   top: 1.5rem;
   right: 0;
   z-index: 999;
-  border: 2px solid #7d1c32;
   width: 150px;
-  font-size: 20px;
 }
-.navbar__mobile ul {
+@media screen and (min-width: 615px) {
+  .navbar__mobile {
+    display: none;
+  }
+}
+@media screen and (max-width: 615px) {
+  .navbar__mobile {
+    display: block;
+  }
+}
+.navbar__mobile .ul__mobile {
+  margin-top: 15px;
   display: flex;
   flex-direction: column;
+}
+.navbar__mobile .ul__mobile a,
+.navbar__mobile .ul__mobile div {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.anim-1 {
+  animation-delay: 0.1s;
+}
+
+.anim-2 {
+  animation-delay: 0.2s;
+}
+
+.anim-3 {
+  animation-delay: 0.3s;
+}
+
+.anim-4 {
+  animation-delay: 0.4s;
 }
 
 .social {
   position: fixed;
   z-index: 999;
-  border: 1px solid #f1f1f1;
-  border-right: none;
-  width: 10rem;
-  height: 3rem;
-  border-radius: 10px 0 0 10px;
   bottom: 0;
   right: 0;
+  width: 10rem;
+  height: 3rem;
+  border: 1px solid #f1f1f1;
+  border-right: none;
+  border-radius: 10px 0 0 10px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -256,8 +317,9 @@ nav .nav__responsive {
   width: 50px;
   height: 75px;
   position: absolute;
-  bottom: 5vh;
-  right: 49vw;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, -50%);
 }
 .scroll__bottom:hover {
   -webkit-animation-name: bounce;
@@ -278,6 +340,19 @@ nav .nav__responsive {
 #section__two {
   position: relative;
 }
+#section__two .skills__grid {
+  display: grid;
+  align-items: center;
+  grid-template-areas: "A  B";
+  grid-column-gap: 5rem;
+  grid-template-columns: 1fr 1fr;
+}
+@media screen and (max-width: 850px) {
+  #section__two .skills__grid {
+    grid-template-areas: "A" "B";
+    grid-template-columns: auto;
+  }
+}
 #section__two h3 {
   color: #7d1c32;
   font-family: "Helvetica Neue Bold", "Helvetica";
@@ -286,10 +361,9 @@ nav .nav__responsive {
   text-align: center;
 }
 
-.skills__grid {
-  display: grid;
-  grid-template-areas: "A B C";
-  grid-template-columns: 1fr 1fr 500px;
+.reveal {
+  -webkit-animation: tracking-in-expand-fwd 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+  animation: tracking-in-expand-fwd 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }
 
 .languages {
@@ -297,10 +371,12 @@ nav .nav__responsive {
   padding-left: 2rem;
   letter-spacing: normal;
   font-family: "Helvetica Neue Bold", "Helvetica";
+  max-width: 100%;
 }
 .languages h3 {
   padding-bottom: 5rem;
   letter-spacing: 3px;
+  color: #f1f1f1 !important;
 }
 .languages .years {
   font-size: 0.85rem;
@@ -348,157 +424,829 @@ nav .nav__responsive {
 
 .others__skills {
   font-family: "Helvetica Neue Bold", "Helvetica";
-  border: 2px solid #7d1c32;
-  border-radius: 10px 0 0 10px;
-  height: 35rem;
-  border-right: none;
-  grid-area: C;
+  grid-area: B;
 }
 .others__skills h3 {
-  padding-bottom: 5rem;
+  color: #f1f1f1 !important;
 }
 .others__skills .others__list {
+  padding-right: 2rem;
+  max-width: 100%;
   display: flex;
-  width: 80%;
-  height: 100%;
-  margin: 0 auto;
-  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
 }
 .others__skills .others__list ul {
-  width: 80%;
+  display: flex;
 }
 .others__skills .others__list ul li {
-  padding: 20px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-.reveal__others {
-  -webkit-animation-name: slideInRight;
-  animation-name: slideInRight;
-  -webkit-animation-duration: 1.5s;
-  animation-duration: 1.5s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
+.others__skills .others__list ul li p {
+  padding-top: 1rem;
+  max-width: 100%;
+}
+
+.ko-progress-circle {
+  margin: 20px auto;
+  width: 75px;
+  height: 75px;
+  background-color: gray;
+  border-radius: 50%;
+}
+.ko-progress-circle .ko-progress-circle__slice,
+.ko-progress-circle .ko-progress-circle__fill {
+  width: 75px;
+  height: 75px;
+  position: absolute;
+  transition: transform 1s;
+  border-radius: 50%;
+}
+.ko-progress-circle .ko-progress-circle__slice {
+  clip: rect(0px, 75px, 75px, 37.5px);
+}
+.ko-progress-circle .ko-progress-circle__slice .ko-progress-circle__fill {
+  clip: rect(0px, 37.5px, 75px, 0px);
+  background-color: #7d1c32;
+}
+.ko-progress-circle .ko-progress-circle__overlay {
+  width: 65px;
+  height: 65px;
+  position: absolute;
+  margin-left: 5px;
+  margin-top: 5px;
+  background-color: #1d1d1d;
+  border-radius: 50%;
+}
+.ko-progress-circle[data-progress="0"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="0"] .ko-progress-circle__fill {
+  transform: rotate(0deg);
+}
+.ko-progress-circle[data-progress="0"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(0deg);
+}
+.ko-progress-circle[data-progress="1"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="1"] .ko-progress-circle__fill {
+  transform: rotate(1.8deg);
+}
+.ko-progress-circle[data-progress="1"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(3.6deg);
+}
+.ko-progress-circle[data-progress="2"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="2"] .ko-progress-circle__fill {
+  transform: rotate(3.6deg);
+}
+.ko-progress-circle[data-progress="2"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(7.2deg);
+}
+.ko-progress-circle[data-progress="3"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="3"] .ko-progress-circle__fill {
+  transform: rotate(5.4deg);
+}
+.ko-progress-circle[data-progress="3"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(10.8deg);
+}
+.ko-progress-circle[data-progress="4"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="4"] .ko-progress-circle__fill {
+  transform: rotate(7.2deg);
+}
+.ko-progress-circle[data-progress="4"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(14.4deg);
+}
+.ko-progress-circle[data-progress="5"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="5"] .ko-progress-circle__fill {
+  transform: rotate(9deg);
+}
+.ko-progress-circle[data-progress="5"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(18deg);
+}
+.ko-progress-circle[data-progress="6"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="6"] .ko-progress-circle__fill {
+  transform: rotate(10.8deg);
+}
+.ko-progress-circle[data-progress="6"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(21.6deg);
+}
+.ko-progress-circle[data-progress="7"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="7"] .ko-progress-circle__fill {
+  transform: rotate(12.6deg);
+}
+.ko-progress-circle[data-progress="7"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(25.2deg);
+}
+.ko-progress-circle[data-progress="8"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="8"] .ko-progress-circle__fill {
+  transform: rotate(14.4deg);
+}
+.ko-progress-circle[data-progress="8"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(28.8deg);
+}
+.ko-progress-circle[data-progress="9"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="9"] .ko-progress-circle__fill {
+  transform: rotate(16.2deg);
+}
+.ko-progress-circle[data-progress="9"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(32.4deg);
+}
+.ko-progress-circle[data-progress="10"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="10"] .ko-progress-circle__fill {
+  transform: rotate(18deg);
+}
+.ko-progress-circle[data-progress="10"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(36deg);
+}
+.ko-progress-circle[data-progress="11"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="11"] .ko-progress-circle__fill {
+  transform: rotate(19.8deg);
+}
+.ko-progress-circle[data-progress="11"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(39.6deg);
+}
+.ko-progress-circle[data-progress="12"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="12"] .ko-progress-circle__fill {
+  transform: rotate(21.6deg);
+}
+.ko-progress-circle[data-progress="12"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(43.2deg);
+}
+.ko-progress-circle[data-progress="13"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="13"] .ko-progress-circle__fill {
+  transform: rotate(23.4deg);
+}
+.ko-progress-circle[data-progress="13"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(46.8deg);
+}
+.ko-progress-circle[data-progress="14"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="14"] .ko-progress-circle__fill {
+  transform: rotate(25.2deg);
+}
+.ko-progress-circle[data-progress="14"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(50.4deg);
+}
+.ko-progress-circle[data-progress="15"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="15"] .ko-progress-circle__fill {
+  transform: rotate(27deg);
+}
+.ko-progress-circle[data-progress="15"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(54deg);
+}
+.ko-progress-circle[data-progress="16"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="16"] .ko-progress-circle__fill {
+  transform: rotate(28.8deg);
+}
+.ko-progress-circle[data-progress="16"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(57.6deg);
+}
+.ko-progress-circle[data-progress="17"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="17"] .ko-progress-circle__fill {
+  transform: rotate(30.6deg);
+}
+.ko-progress-circle[data-progress="17"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(61.2deg);
+}
+.ko-progress-circle[data-progress="18"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="18"] .ko-progress-circle__fill {
+  transform: rotate(32.4deg);
+}
+.ko-progress-circle[data-progress="18"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(64.8deg);
+}
+.ko-progress-circle[data-progress="19"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="19"] .ko-progress-circle__fill {
+  transform: rotate(34.2deg);
+}
+.ko-progress-circle[data-progress="19"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(68.4deg);
+}
+.ko-progress-circle[data-progress="20"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="20"] .ko-progress-circle__fill {
+  transform: rotate(36deg);
+}
+.ko-progress-circle[data-progress="20"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(72deg);
+}
+.ko-progress-circle[data-progress="21"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="21"] .ko-progress-circle__fill {
+  transform: rotate(37.8deg);
+}
+.ko-progress-circle[data-progress="21"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(75.6deg);
+}
+.ko-progress-circle[data-progress="22"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="22"] .ko-progress-circle__fill {
+  transform: rotate(39.6deg);
+}
+.ko-progress-circle[data-progress="22"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(79.2deg);
+}
+.ko-progress-circle[data-progress="23"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="23"] .ko-progress-circle__fill {
+  transform: rotate(41.4deg);
+}
+.ko-progress-circle[data-progress="23"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(82.8deg);
+}
+.ko-progress-circle[data-progress="24"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="24"] .ko-progress-circle__fill {
+  transform: rotate(43.2deg);
+}
+.ko-progress-circle[data-progress="24"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(86.4deg);
+}
+.ko-progress-circle[data-progress="25"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="25"] .ko-progress-circle__fill {
+  transform: rotate(45deg);
+}
+.ko-progress-circle[data-progress="25"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(90deg);
+}
+.ko-progress-circle[data-progress="26"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="26"] .ko-progress-circle__fill {
+  transform: rotate(46.8deg);
+}
+.ko-progress-circle[data-progress="26"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(93.6deg);
+}
+.ko-progress-circle[data-progress="27"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="27"] .ko-progress-circle__fill {
+  transform: rotate(48.6deg);
+}
+.ko-progress-circle[data-progress="27"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(97.2deg);
+}
+.ko-progress-circle[data-progress="28"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="28"] .ko-progress-circle__fill {
+  transform: rotate(50.4deg);
+}
+.ko-progress-circle[data-progress="28"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(100.8deg);
+}
+.ko-progress-circle[data-progress="29"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="29"] .ko-progress-circle__fill {
+  transform: rotate(52.2deg);
+}
+.ko-progress-circle[data-progress="29"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(104.4deg);
+}
+.ko-progress-circle[data-progress="30"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="30"] .ko-progress-circle__fill {
+  transform: rotate(54deg);
+}
+.ko-progress-circle[data-progress="30"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(108deg);
+}
+.ko-progress-circle[data-progress="31"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="31"] .ko-progress-circle__fill {
+  transform: rotate(55.8deg);
+}
+.ko-progress-circle[data-progress="31"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(111.6deg);
+}
+.ko-progress-circle[data-progress="32"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="32"] .ko-progress-circle__fill {
+  transform: rotate(57.6deg);
+}
+.ko-progress-circle[data-progress="32"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(115.2deg);
+}
+.ko-progress-circle[data-progress="33"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="33"] .ko-progress-circle__fill {
+  transform: rotate(59.4deg);
+}
+.ko-progress-circle[data-progress="33"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(118.8deg);
+}
+.ko-progress-circle[data-progress="34"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="34"] .ko-progress-circle__fill {
+  transform: rotate(61.2deg);
+}
+.ko-progress-circle[data-progress="34"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(122.4deg);
+}
+.ko-progress-circle[data-progress="35"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="35"] .ko-progress-circle__fill {
+  transform: rotate(63deg);
+}
+.ko-progress-circle[data-progress="35"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(126deg);
+}
+.ko-progress-circle[data-progress="36"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="36"] .ko-progress-circle__fill {
+  transform: rotate(64.8deg);
+}
+.ko-progress-circle[data-progress="36"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(129.6deg);
+}
+.ko-progress-circle[data-progress="37"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="37"] .ko-progress-circle__fill {
+  transform: rotate(66.6deg);
+}
+.ko-progress-circle[data-progress="37"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(133.2deg);
+}
+.ko-progress-circle[data-progress="38"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="38"] .ko-progress-circle__fill {
+  transform: rotate(68.4deg);
+}
+.ko-progress-circle[data-progress="38"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(136.8deg);
+}
+.ko-progress-circle[data-progress="39"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="39"] .ko-progress-circle__fill {
+  transform: rotate(70.2deg);
+}
+.ko-progress-circle[data-progress="39"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(140.4deg);
+}
+.ko-progress-circle[data-progress="40"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="40"] .ko-progress-circle__fill {
+  transform: rotate(72deg);
+}
+.ko-progress-circle[data-progress="40"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(144deg);
+}
+.ko-progress-circle[data-progress="41"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="41"] .ko-progress-circle__fill {
+  transform: rotate(73.8deg);
+}
+.ko-progress-circle[data-progress="41"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(147.6deg);
+}
+.ko-progress-circle[data-progress="42"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="42"] .ko-progress-circle__fill {
+  transform: rotate(75.6deg);
+}
+.ko-progress-circle[data-progress="42"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(151.2deg);
+}
+.ko-progress-circle[data-progress="43"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="43"] .ko-progress-circle__fill {
+  transform: rotate(77.4deg);
+}
+.ko-progress-circle[data-progress="43"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(154.8deg);
+}
+.ko-progress-circle[data-progress="44"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="44"] .ko-progress-circle__fill {
+  transform: rotate(79.2deg);
+}
+.ko-progress-circle[data-progress="44"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(158.4deg);
+}
+.ko-progress-circle[data-progress="45"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="45"] .ko-progress-circle__fill {
+  transform: rotate(81deg);
+}
+.ko-progress-circle[data-progress="45"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(162deg);
+}
+.ko-progress-circle[data-progress="46"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="46"] .ko-progress-circle__fill {
+  transform: rotate(82.8deg);
+}
+.ko-progress-circle[data-progress="46"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(165.6deg);
+}
+.ko-progress-circle[data-progress="47"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="47"] .ko-progress-circle__fill {
+  transform: rotate(84.6deg);
+}
+.ko-progress-circle[data-progress="47"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(169.2deg);
+}
+.ko-progress-circle[data-progress="48"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="48"] .ko-progress-circle__fill {
+  transform: rotate(86.4deg);
+}
+.ko-progress-circle[data-progress="48"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(172.8deg);
+}
+.ko-progress-circle[data-progress="49"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="49"] .ko-progress-circle__fill {
+  transform: rotate(88.2deg);
+}
+.ko-progress-circle[data-progress="49"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(176.4deg);
+}
+.ko-progress-circle[data-progress="50"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="50"] .ko-progress-circle__fill {
+  transform: rotate(90deg);
+}
+.ko-progress-circle[data-progress="50"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(180deg);
+}
+.ko-progress-circle[data-progress="51"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="51"] .ko-progress-circle__fill {
+  transform: rotate(91.8deg);
+}
+.ko-progress-circle[data-progress="51"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(183.6deg);
+}
+.ko-progress-circle[data-progress="52"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="52"] .ko-progress-circle__fill {
+  transform: rotate(93.6deg);
+}
+.ko-progress-circle[data-progress="52"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(187.2deg);
+}
+.ko-progress-circle[data-progress="53"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="53"] .ko-progress-circle__fill {
+  transform: rotate(95.4deg);
+}
+.ko-progress-circle[data-progress="53"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(190.8deg);
+}
+.ko-progress-circle[data-progress="54"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="54"] .ko-progress-circle__fill {
+  transform: rotate(97.2deg);
+}
+.ko-progress-circle[data-progress="54"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(194.4deg);
+}
+.ko-progress-circle[data-progress="55"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="55"] .ko-progress-circle__fill {
+  transform: rotate(99deg);
+}
+.ko-progress-circle[data-progress="55"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(198deg);
+}
+.ko-progress-circle[data-progress="56"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="56"] .ko-progress-circle__fill {
+  transform: rotate(100.8deg);
+}
+.ko-progress-circle[data-progress="56"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(201.6deg);
+}
+.ko-progress-circle[data-progress="57"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="57"] .ko-progress-circle__fill {
+  transform: rotate(102.6deg);
+}
+.ko-progress-circle[data-progress="57"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(205.2deg);
+}
+.ko-progress-circle[data-progress="58"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="58"] .ko-progress-circle__fill {
+  transform: rotate(104.4deg);
+}
+.ko-progress-circle[data-progress="58"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(208.8deg);
+}
+.ko-progress-circle[data-progress="59"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="59"] .ko-progress-circle__fill {
+  transform: rotate(106.2deg);
+}
+.ko-progress-circle[data-progress="59"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(212.4deg);
+}
+.ko-progress-circle[data-progress="60"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="60"] .ko-progress-circle__fill {
+  transform: rotate(108deg);
+}
+.ko-progress-circle[data-progress="60"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(216deg);
+}
+.ko-progress-circle[data-progress="61"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="61"] .ko-progress-circle__fill {
+  transform: rotate(109.8deg);
+}
+.ko-progress-circle[data-progress="61"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(219.6deg);
+}
+.ko-progress-circle[data-progress="62"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="62"] .ko-progress-circle__fill {
+  transform: rotate(111.6deg);
+}
+.ko-progress-circle[data-progress="62"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(223.2deg);
+}
+.ko-progress-circle[data-progress="63"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="63"] .ko-progress-circle__fill {
+  transform: rotate(113.4deg);
+}
+.ko-progress-circle[data-progress="63"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(226.8deg);
+}
+.ko-progress-circle[data-progress="64"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="64"] .ko-progress-circle__fill {
+  transform: rotate(115.2deg);
+}
+.ko-progress-circle[data-progress="64"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(230.4deg);
+}
+.ko-progress-circle[data-progress="65"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="65"] .ko-progress-circle__fill {
+  transform: rotate(117deg);
+}
+.ko-progress-circle[data-progress="65"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(234deg);
+}
+.ko-progress-circle[data-progress="66"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="66"] .ko-progress-circle__fill {
+  transform: rotate(118.8deg);
+}
+.ko-progress-circle[data-progress="66"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(237.6deg);
+}
+.ko-progress-circle[data-progress="67"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="67"] .ko-progress-circle__fill {
+  transform: rotate(120.6deg);
+}
+.ko-progress-circle[data-progress="67"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(241.2deg);
+}
+.ko-progress-circle[data-progress="68"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="68"] .ko-progress-circle__fill {
+  transform: rotate(122.4deg);
+}
+.ko-progress-circle[data-progress="68"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(244.8deg);
+}
+.ko-progress-circle[data-progress="69"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="69"] .ko-progress-circle__fill {
+  transform: rotate(124.2deg);
+}
+.ko-progress-circle[data-progress="69"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(248.4deg);
+}
+.ko-progress-circle[data-progress="70"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="70"] .ko-progress-circle__fill {
+  transform: rotate(126deg);
+}
+.ko-progress-circle[data-progress="70"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(252deg);
+}
+.ko-progress-circle[data-progress="71"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="71"] .ko-progress-circle__fill {
+  transform: rotate(127.8deg);
+}
+.ko-progress-circle[data-progress="71"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(255.6deg);
+}
+.ko-progress-circle[data-progress="72"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="72"] .ko-progress-circle__fill {
+  transform: rotate(129.6deg);
+}
+.ko-progress-circle[data-progress="72"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(259.2deg);
+}
+.ko-progress-circle[data-progress="73"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="73"] .ko-progress-circle__fill {
+  transform: rotate(131.4deg);
+}
+.ko-progress-circle[data-progress="73"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(262.8deg);
+}
+.ko-progress-circle[data-progress="74"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="74"] .ko-progress-circle__fill {
+  transform: rotate(133.2deg);
+}
+.ko-progress-circle[data-progress="74"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(266.4deg);
+}
+.ko-progress-circle[data-progress="75"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="75"] .ko-progress-circle__fill {
+  transform: rotate(135deg);
+}
+.ko-progress-circle[data-progress="75"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(270deg);
+}
+.ko-progress-circle[data-progress="76"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="76"] .ko-progress-circle__fill {
+  transform: rotate(136.8deg);
+}
+.ko-progress-circle[data-progress="76"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(273.6deg);
+}
+.ko-progress-circle[data-progress="77"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="77"] .ko-progress-circle__fill {
+  transform: rotate(138.6deg);
+}
+.ko-progress-circle[data-progress="77"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(277.2deg);
+}
+.ko-progress-circle[data-progress="78"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="78"] .ko-progress-circle__fill {
+  transform: rotate(140.4deg);
+}
+.ko-progress-circle[data-progress="78"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(280.8deg);
+}
+.ko-progress-circle[data-progress="79"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="79"] .ko-progress-circle__fill {
+  transform: rotate(142.2deg);
+}
+.ko-progress-circle[data-progress="79"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(284.4deg);
+}
+.ko-progress-circle[data-progress="80"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="80"] .ko-progress-circle__fill {
+  transform: rotate(144deg);
+}
+.ko-progress-circle[data-progress="80"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(288deg);
+}
+.ko-progress-circle[data-progress="81"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="81"] .ko-progress-circle__fill {
+  transform: rotate(145.8deg);
+}
+.ko-progress-circle[data-progress="81"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(291.6deg);
+}
+.ko-progress-circle[data-progress="82"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="82"] .ko-progress-circle__fill {
+  transform: rotate(147.6deg);
+}
+.ko-progress-circle[data-progress="82"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(295.2deg);
+}
+.ko-progress-circle[data-progress="83"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="83"] .ko-progress-circle__fill {
+  transform: rotate(149.4deg);
+}
+.ko-progress-circle[data-progress="83"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(298.8deg);
+}
+.ko-progress-circle[data-progress="84"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="84"] .ko-progress-circle__fill {
+  transform: rotate(151.2deg);
+}
+.ko-progress-circle[data-progress="84"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(302.4deg);
+}
+.ko-progress-circle[data-progress="85"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="85"] .ko-progress-circle__fill {
+  transform: rotate(153deg);
+}
+.ko-progress-circle[data-progress="85"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(306deg);
+}
+.ko-progress-circle[data-progress="86"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="86"] .ko-progress-circle__fill {
+  transform: rotate(154.8deg);
+}
+.ko-progress-circle[data-progress="86"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(309.6deg);
+}
+.ko-progress-circle[data-progress="87"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="87"] .ko-progress-circle__fill {
+  transform: rotate(156.6deg);
+}
+.ko-progress-circle[data-progress="87"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(313.2deg);
+}
+.ko-progress-circle[data-progress="88"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="88"] .ko-progress-circle__fill {
+  transform: rotate(158.4deg);
+}
+.ko-progress-circle[data-progress="88"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(316.8deg);
+}
+.ko-progress-circle[data-progress="89"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="89"] .ko-progress-circle__fill {
+  transform: rotate(160.2deg);
+}
+.ko-progress-circle[data-progress="89"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(320.4deg);
+}
+.ko-progress-circle[data-progress="90"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="90"] .ko-progress-circle__fill {
+  transform: rotate(162deg);
+}
+.ko-progress-circle[data-progress="90"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(324deg);
+}
+.ko-progress-circle[data-progress="91"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="91"] .ko-progress-circle__fill {
+  transform: rotate(163.8deg);
+}
+.ko-progress-circle[data-progress="91"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(327.6deg);
+}
+.ko-progress-circle[data-progress="92"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="92"] .ko-progress-circle__fill {
+  transform: rotate(165.6deg);
+}
+.ko-progress-circle[data-progress="92"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(331.2deg);
+}
+.ko-progress-circle[data-progress="93"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="93"] .ko-progress-circle__fill {
+  transform: rotate(167.4deg);
+}
+.ko-progress-circle[data-progress="93"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(334.8deg);
+}
+.ko-progress-circle[data-progress="94"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="94"] .ko-progress-circle__fill {
+  transform: rotate(169.2deg);
+}
+.ko-progress-circle[data-progress="94"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(338.4deg);
+}
+.ko-progress-circle[data-progress="95"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="95"] .ko-progress-circle__fill {
+  transform: rotate(171deg);
+}
+.ko-progress-circle[data-progress="95"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(342deg);
+}
+.ko-progress-circle[data-progress="96"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="96"] .ko-progress-circle__fill {
+  transform: rotate(172.8deg);
+}
+.ko-progress-circle[data-progress="96"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(345.6deg);
+}
+.ko-progress-circle[data-progress="97"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="97"] .ko-progress-circle__fill {
+  transform: rotate(174.6deg);
+}
+.ko-progress-circle[data-progress="97"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(349.2deg);
+}
+.ko-progress-circle[data-progress="98"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="98"] .ko-progress-circle__fill {
+  transform: rotate(176.4deg);
+}
+.ko-progress-circle[data-progress="98"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(352.8deg);
+}
+.ko-progress-circle[data-progress="99"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="99"] .ko-progress-circle__fill {
+  transform: rotate(178.2deg);
+}
+.ko-progress-circle[data-progress="99"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(356.4deg);
+}
+.ko-progress-circle[data-progress="100"] .ko-progress-circle__slice.full,
+.ko-progress-circle[data-progress="100"] .ko-progress-circle__fill {
+  transform: rotate(180deg);
+}
+.ko-progress-circle[data-progress="100"] .ko-progress-circle__fill.ko-progress-circle__bar {
+  transform: rotate(360deg);
 }
 
 .container__text {
   max-width: 60%;
-  margin-left: 5rem;
-  padding-top: 15%;
+  margin-left: 80px;
+  padding-top: 300px;
   font-family: "Helvetica Neue Light", "Helvetica", "Arial";
 }
 @media screen and (max-width: 1250px) {
   .container__text {
+    padding-top: 200px;
     max-width: 100% !important;
-    padding-top: 25%;
     margin-left: 1rem;
     margin-right: 0.5rem;
-  }
-}
-@media screen and (max-width: 585px) {
-  .container__text {
-    padding-top: 55%;
   }
 }
 .container__text p {
   margin-bottom: 2rem;
 }
 .container__text p:nth-child(1) {
-  font-size: 60px;
+  font-size: 4.5vw;
 }
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 400px) {
   .container__text p:nth-child(1) {
-    font-size: 50px;
+    font-size: 5.5vw;
+    font-family: "Helvetica Neue Bold", "Helvetica";
   }
 }
-@media screen and (max-width: 1020px) {
+@media screen and (min-width: 400px) and (max-width: 1110px) {
   .container__text p:nth-child(1) {
-    font-size: 40px;
-  }
-}
-@media screen and (max-width: 825px) {
-  .container__text p:nth-child(1) {
-    font-size: 35px;
-  }
-}
-@media screen and (max-width: 550px) {
-  .container__text p:nth-child(1) {
-    font-size: 25px;
-    font-family: "Helvetica Neue Bold", "Helvetica", "Arial";
-  }
-}
-@media screen and (max-width: 450px) {
-  .container__text p:nth-child(1) {
-    font-size: 20px;
-    font-family: "Helvetica Neue Bold", "Helvetica", "Arial";
-  }
-}
-@media screen and (max-width: 385px) {
-  .container__text p:nth-child(1) {
-    font-size: 18px;
-    font-family: "Helvetica Neue Bold", "Helvetica", "Arial";
-  }
-}
-@media screen and (max-width: 340px) {
-  .container__text p:nth-child(1) {
-    font-size: 16px;
-    font-family: "Helvetica Neue Bold", "Helvetica", "Arial";
+    font-size: 5.8vw;
   }
 }
 .container__text p:nth-child(2) {
   font-size: 30px;
   animation: focus-in-expand 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
 }
-@media screen and (max-width: 1250px) {
-  .container__text p:nth-child(2) {
-    font-size: 25px;
-  }
-}
-@media screen and (max-width: 1020px) {
-  .container__text p:nth-child(2) {
-    font-size: 20px;
-  }
-}
 @media screen and (max-width: 400px) {
   .container__text p:nth-child(2) {
-    font-size: 18px;
+    font-size: 5.5vw;
   }
 }
-@media screen and (max-width: 370px) {
+@media screen and (min-width: 400px) and (max-width: 650px) {
   .container__text p:nth-child(2) {
-    font-size: 16px;
-  }
-}
-@media screen and (max-width: 340px) {
-  .container__text p:nth-child(2) {
-    font-size: 14px;
+    font-size: 4.3vw;
   }
 }
 .container__text p:nth-child(3) {
   font-size: 20px;
   animation: focus-in-expand 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 3s both;
 }
-@media screen and (max-width: 1250px) {
-  .container__text p:nth-child(3) {
-    font-size: 20px;
-  }
-}
-@media screen and (max-width: 1020px) {
-  .container__text p:nth-child(3) {
-    font-size: 16px;
-  }
-}
 @media screen and (max-width: 400px) {
   .container__text p:nth-child(3) {
-    font-size: 16px;
+    font-size: 4.5vw;
   }
 }
-@media screen and (max-width: 370px) {
+@media screen and (min-width: 400px) and (max-width: 650px) {
   .container__text p:nth-child(3) {
-    font-size: 14px;
-  }
-}
-@media screen and (max-width: 340px) {
-  .container__text p:nth-child(3) {
-    font-size: 12px;
+    font-size: 3.3vw;
   }
 }
 
@@ -510,7 +1258,7 @@ nav .nav__responsive {
   overflow: hidden;
   white-space: nowrap;
   position: relative;
-  animation: typing 3s steps(29);
+  animation: typing 2s steps(29);
 }
 .typewriter__container .typewriter p::after {
   content: "";
@@ -527,12 +1275,33 @@ nav .nav__responsive {
 .letter {
   z-index: -1;
   position: absolute;
-  width: 70rem;
+  width: 60vw;
   right: 50px;
-  top: -50px;
+  top: -45px;
+}
+@media screen and (max-width: 1250px) {
+  .letter {
+    width: 65vw;
+    left: 350px;
+    top: 50px;
+  }
+}
+@media screen and (max-width: 1020px) {
+  .letter {
+    width: 75vw;
+    transform: translate(-50%, -50%);
+    top: 70%;
+    left: 50%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .letter {
+    top: 65%;
+    width: 85vw;
+  }
 }
 .letter img {
-  width: 100%;
+  max-width: 100%;
 }
 
 #section__three {

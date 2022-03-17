@@ -1,10 +1,23 @@
 #section__two {
-    position: relative;
+	position: relative;
+	.skills__grid {
+		display: grid;
+        align-items: center;
+		grid-template-areas: 'A  B';
+		grid-column-gap: 5rem;
+		grid-template-columns: 1fr 1fr;
+        @include responsiveSkills;
+	}
 	h3 {
 		color: $red;
-        font-family: 'Helvetica Neue Bold', 'Helvetica';
-        font-size: 30px;
-        padding-top: 10rem;
-        text-align: center;
+		font-family: 'Helvetica Neue Bold', 'Helvetica';
+		font-size: 30px;
+		padding-top: 10rem;
+		text-align: center;
 	}
+}
+
+.reveal {
+	-webkit-animation: tracking-in-expand-fwd 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
+	animation: tracking-in-expand-fwd 1.2s cubic-bezier(0.215, 0.61, 0.355, 1) both;
 }

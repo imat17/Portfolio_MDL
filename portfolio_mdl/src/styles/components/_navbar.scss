@@ -48,21 +48,38 @@ nav {
 	.nav__responsive {
 		cursor: pointer;
 		position: absolute;
-		top: .1rem;
+		top: 0.5rem;
 		right: 3rem;
+		@include navbarMobileDisplay;
 	}
 }
 
 .navbar__mobile {
+	@include navbarMobileDisplay;
 	position: absolute;
 	top: 1.5rem;
 	right: 0;
 	z-index: 999;
-	border: 2px solid $red;
 	width: 150px;
-	font-size: 20px;
-	ul {
+	.ul__mobile {
+		margin-top: 15px;
 		display: flex;
 		flex-direction: column;
+		a,
+		div {
+			-webkit-animation-name: fadeIn;
+			animation-name: fadeIn;
+			-webkit-animation-duration: 1s;
+			animation-duration: 1s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+	}
+}
+
+@for $i from 1 to 5 {
+	.anim-#{$i} {
+		animation-delay: #{$i*0.1}s;
+		// animation-delay: calc($i / 10)s;
 	}
 }

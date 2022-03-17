@@ -19,7 +19,7 @@ a {
 body {
 	background-color: $bg-black;
 	color: $white;
-	letter-spacing: 3px;
+	letter-spacing: 2px;
 }
 
 body::-webkit-scrollbar {
@@ -42,14 +42,15 @@ input:focus {
 	src: url('./fonts/Helvetica\ Neue\ Light.woff2') format('woff2');
 }
 
-.container__global {
-	height: 100vh;
-	// scroll-snap-type: y mandatory;
-	// // overflow-y: scroll;
-}
+// .container__global {
+// 	height: 100%;
+// 	width: 100%;
+// 	// scroll-snap-type: y mandatory;
+// 	// overflow-y: scroll;
+// }
 
 section {
-	width: 100%;
+	width: 100vw;
 	height: 100vh;
-	// scroll-snap-align: center;
+	// scroll-snap-align: start;
 }
