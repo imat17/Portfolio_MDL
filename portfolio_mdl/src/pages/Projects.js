@@ -1,8 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import ProjectsPerso from '../components/ProjectsPerso';
 import ProjectsPro from '../components/ProjectsPro';
+import { useInView } from 'react-intersection-observer';
 
 const Projects = () => {
+	const ref = useRef();
+	const [inViewRef, inView] = useInView();
+
+	const setRefs = useCallback(
+		(node) => {
+			ref.current = node;
+
+			inViewRef(node);
+		},
+		[inViewRef]
+	);
+
 	const [projectPro, setProjectPro] = useState(true);
 	const [projectPerso, setProjectPerso] = useState(false);
 
@@ -42,13 +55,13 @@ const Projects = () => {
 
 	return (
 		<section id='section__three'>
-			<h3>Mes projets</h3>
-			<div className='projects__choise'>
-				<p id='pro' onClick={handleProject}>
-					Projets de formation
+			<h2>Mes réalisations</h2>
+			<div className='projects__choise' ref={setRefs}>
+				<p id='pro' className={inView ? 'anim__left' : ''} ref={ref} onClick={handleProject}>
+					Formation
 				</p>
-				<p id='perso' onClick={handleProject}>
-					Projets personnels
+				<p id='perso' className={inView ? 'anim__right' : ''} ref={ref} onClick={handleProject}>
+					Personnels
 				</p>
 			</div>
 			{projectsToggle()}

@@ -6,7 +6,7 @@ const Home = () => {
 	return (
 		<section id='section__one'>
 			<HomeText />
-			<ScrollDown />
+			{/* <ScrollDown /> */}
 		</section>
 	);
 };

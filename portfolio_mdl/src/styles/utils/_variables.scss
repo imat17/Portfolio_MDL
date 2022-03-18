@@ -1,13 +1,14 @@
 $bg-black: #1d1d1d;
 $white: #f1f1f1;
-$red: #7d1c32;
+// $red: #7d1c32;
+$red: #C32C5A;
+$red-wcag: #C32C5A;
 $beige: #e2ded5;
 
 $circle-size: 75px;
+$half-circle-size: 50px;
 $circle-background: gray;
-// $circle-color: $red;
 $inset-size: 65px;
+$half-inset-size: 43.3px;
 $inset-color: $bg-black;
-$transition-length: 2s;
-$i: 0;
-$increment: 180deg * 0.01;
+$transition-length: 2.8s;

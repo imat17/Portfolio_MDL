@@ -76,7 +76,7 @@
 	}
 	@media screen and (max-width: 1020px) {
 		width: 75vw;
-		transform: translate(-50%, -50%); 
+		transform: translate(-50%, -50%);
 		top: 70%;
 		left: 50%;
 	}
@@ -86,13 +86,78 @@
 	}
 }
 
-
-// Page skills 
+// Page skills
 
 @mixin responsiveSkills {
-	@media screen and (max-width: 850px) {
-		grid-template-areas: 'A'
-		                     'B';
+	@media screen and (max-width: 900px) {
+		grid-template-areas:
+			'A'
+			'B';
 		grid-template-columns: auto;
+	}
+	@media screen and (max-width: 420px) {
+		display: block;
+	}
+}
+
+@mixin responsiveProgressBar {
+	@media screen and (max-width: 900px) {
+		max-width: 90%;
+	}
+	@media screen and (max-width: 400px) {
+		margin-top: -5rem;
+	}
+}
+
+@mixin responsiveOthersSkills {
+	@media screen and (max-width: 400px) {
+		margin-top: -5rem;
+	}
+}
+
+@mixin responsiveOthersSkillsLi {
+	@media screen and (max-width: 400px) {
+		padding: 0.8rem;
+	}
+}
+
+// Projects
+
+@keyframes slide-in-bck-bottom {
+	0% {
+		-webkit-transform: translateZ(700px) translateY(300px);
+		transform: translateZ(700px) translateY(300px);
+		opacity: 0;
+	}
+	100% {
+		-webkit-transform: translateZ(0) translateY(0);
+		transform: translateZ(0) translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes fadeInLeftBig {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(-2000px, 0, 0);
+		transform: translate3d(-2000px, 0, 0);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
+	}
+}
+
+@keyframes fadeInRightBig {
+	0% {
+		opacity: 0;
+		-webkit-transform: translate3d(2000px, 0, 0);
+		transform: translate3d(2000px, 0, 0);
+	}
+	100% {
+		opacity: 1;
+		-webkit-transform: none;
+		transform: none;
 	}
 }

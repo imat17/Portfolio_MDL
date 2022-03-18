@@ -8,11 +8,11 @@ const Skills = () => {
 	
 	return (
 		<section id='section__two'>
-			<h3 ref={ref} className={inView ? 'reveal' : ''}>
+			<h2 ref={ref} className={inView ? 'reveal' : ''}>
 				Mes compétences
-			</h3>
+			</h2>
 			<SkillsList />
-			<ScrollDown />
+			{/* <ScrollDown /> */}
 		</section>
 	);
 };

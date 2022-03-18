@@ -42,15 +42,15 @@ input:focus {
 	src: url('./fonts/Helvetica\ Neue\ Light.woff2') format('woff2');
 }
 
-// .container__global {
-// 	height: 100%;
-// 	width: 100%;
-// 	// scroll-snap-type: y mandatory;
-// 	// overflow-y: scroll;
-// }
-
 section {
 	width: 100vw;
 	height: 100vh;
-	// scroll-snap-align: start;
+}
+
+h2 {
+	color: $red;
+	font-family: 'Helvetica Neue Bold', 'Helvetica';
+	font-size: 30px;
+	padding-top: 10rem;
+	text-align: center;
 }

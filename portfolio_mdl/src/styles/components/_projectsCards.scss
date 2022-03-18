@@ -1,6 +1,7 @@
 .projects {
 	margin-top: 5rem;
 	padding: 10px;
+	opacity: 0;
 	.rec.rec-arrow {
 		color: $white;
 		background-color: $red;
@@ -11,10 +12,19 @@
 	}
 	.rec.rec-dot {
 		background-color: $red;
-		&:active, :hover {
-			box-shadow: 0 0 1px 3px rgb(125 28 50);
+		&:hover,
+		:active {
+			box-shadow: 0 0 1px 3px rgb(255, 255, 255) !important;
 		}
 	}
+	.lcUbOd {
+		box-shadow: 0 0 1px 3px rgb(255, 255, 255) !important;
+		&:hover,
+		:active {
+			box-shadow: 0 0 1px 3px rgb(255, 255, 255) !important;
+		}
+	}
+
 	li {
 		display: flex;
 		justify-content: center;
@@ -27,7 +37,7 @@
 		}
 		.projects__img {
 			padding-top: 2rem;
-			max-width: 30rem;
+			max-width: 35rem;
 			img {
 				width: 100%;
 				border-radius: 10px;
@@ -49,4 +59,10 @@
 			padding-top: 15px;
 		}
 	}
+}
+
+.project-anim {
+	opacity: 1;
+	-webkit-animation: slide-in-bck-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: slide-in-bck-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }

@@ -17,25 +17,28 @@ const Otherskills = () => {
 		],
 	};
 
-	
 	return (
-		<div className={`others__skills ${inView ? 'reveal__others' : ''}`} ref={ref}>
+		<div className='others__skills'>
 			<h3>Autres compétences</h3>
 			<div className='others__list'>
 				<ul>
 					{skill.first.map((skill) => (
 						<li key={skill.id}>
-							<div class='ko-progress-circle' data-progress={ inView ? `${skill.xp}` : ''} ref={ref}>
-								<div class='ko-circle'>
-									<div class='full ko-progress-circle__slice'>
-										<div class='ko-progress-circle__fill'></div>
+							<div
+								className='ko-progress-circle'
+								data-progress={inView ? `${skill.xp}` : ''}
+								ref={ref}
+							>
+								<div className='ko-circle'>
+									<div className='full ko-progress-circle__slice'>
+										<div className='ko-progress-circle__fill'></div>
 									</div>
-									<div class='ko-progress-circle__slice'>
-										<div class='ko-progress-circle__fill'></div>
-										<div class='ko-progress-circle__fill ko-progress-circle__bar'></div>
+									<div className='ko-progress-circle__slice'>
+										<div className='ko-progress-circle__fill'></div>
+										<div className='ko-progress-circle__fill ko-progress-circle__bar'></div>
 									</div>
 								</div>
-								<div class='ko-progress-circle__overlay'></div>
+								<div className='ko-progress-circle__overlay'></div>
 							</div>
 							<p>{skill.value}</p>
 						</li>
@@ -44,17 +47,21 @@ const Otherskills = () => {
 				<ul>
 					{skill.second.map((skill) => (
 						<li key={skill.id}>
-							<div class='ko-progress-circle' data-progress={ inView ? `${skill.xp}` : ''} ref={ref}>
-								<div class='ko-circle'>
-									<div class='full ko-progress-circle__slice'>
-										<div class='ko-progress-circle__fill'></div>
+							<div
+								className='ko-progress-circle'
+								data-progress={inView ? `${skill.xp}` : ''}
+								ref={ref}
+							>
+								<div className='ko-circle'>
+									<div className='full ko-progress-circle__slice'>
+										<div className='ko-progress-circle__fill'></div>
 									</div>
-									<div class='ko-progress-circle__slice'>
-										<div class='ko-progress-circle__fill'></div>
-										<div class='ko-progress-circle__fill ko-progress-circle__bar'></div>
+									<div className='ko-progress-circle__slice'>
+										<div className='ko-progress-circle__fill'></div>
+										<div className='ko-progress-circle__fill ko-progress-circle__bar'></div>
 									</div>
 								</div>
-								<div class='ko-progress-circle__overlay'></div>
+								<div className='ko-progress-circle__overlay'></div>
 							</div>
 							<p>{skill.value}</p>
 						</li>

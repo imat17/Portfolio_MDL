@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Logo from '../images/logo_mdl.png';
 import List from '../images/icons/bars-solid.svg';
+import CV from '../images/cv-matisse-2022.pdf';
 
 const Header = () => {
 	const [toggle, setToggle] = useState(false);
@@ -12,27 +13,27 @@ const Header = () => {
 			return (
 				<>
 					<div className='navbar__mobile'>
-						<ul className="ul__mobile">
+						<ul className='ul__mobile'>
 							<a href='#section__two' className='anim-1'>
-								<li>
+								<li onClick={(e) => setToggle(!toggle)}>
 									COMPETENCES
 									<p className='border'></p>
 								</li>
 							</a>
 							<a href='#section__three' className='anim-2'>
-								<li>
+								<li onClick={(e) => setToggle(!toggle)}>
 									PROJETS
 									<p className='border'></p>
 								</li>
 							</a>
 							<a href='mailto:davailleleroy.matisse@gmail.com' className='anim-3'>
-								<li>
+								<li onClick={(e) => setToggle(!toggle)}>
 									CONTACT
 									<p className='border'></p>
 								</li>
 							</a>
 							<div className='anim-4'>
-								<li>
+								<li onClick={(e) => setToggle(!toggle)}>
 									CV
 									<p className='border'></p>
 								</li>
@@ -59,7 +60,7 @@ const Header = () => {
 				</a>
 				<a href='#section__three'>
 					<li>
-						PROJETS
+						REALISATIONS
 						<p className='border'></p>
 					</li>
 				</a>
@@ -69,12 +70,12 @@ const Header = () => {
 						<p className='border'></p>
 					</li>
 				</a>
-				<div>
+				<a href={CV} download>
 					<li>
 						CV
 						<p className='border'></p>
 					</li>
-				</div>
+				</a>
 			</ul>
 			<span>
 				<img src={List} alt='nav list' />

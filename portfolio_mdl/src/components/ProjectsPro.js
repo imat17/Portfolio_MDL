@@ -1,10 +1,13 @@
 import React from 'react';
 import { FormationData } from '../data/FormationData';
 import Carousel from 'react-elastic-carousel';
+import { useInView } from 'react-intersection-observer';
 
 const ProjectsPro = (props) => {
+	const { ref, inView } = useInView(1);
+
 	return (
-		<div className='projects'>
+		<div className={`projects ${inView ? 'project-anim' :''}`} ref={ref}>
 			<Carousel itemsToScroll={1} itemsToShow={3} breakPoints={props.breakPoints}>
 				{FormationData.map((project) => (
 					<li key={project.id}>

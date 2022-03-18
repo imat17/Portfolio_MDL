@@ -2,12 +2,12 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const ProgressBar = (props) => {
-	const { ref, inView } = useInView();
+	const { ref, inView } = useInView({threshold: 1});
 	return (
 		<div className='languages'>
-			<h3>Languages</h3>
+			<h3>Langages</h3>
 			<div className='years'>
-				<span>Années d'expérience</span>
+				<span>Annees d'experience</span>
 				<span>6 mois</span>
 				<span>1 an</span>
 			</div>
@@ -20,7 +20,11 @@ const ProgressBar = (props) => {
 					return (
 						<div key={item.id} className='languagesList'>
 							<li>{item.value}</li>
-							<div className='progressBar' style={{ width: progressBar }} ref={ref}></div>
+							<div
+								className={inView ? 'progressBar' : ''}
+								style={{ width: progressBar }}
+								ref={ref}
+							></div>
 						</div>
 					);
 				})}

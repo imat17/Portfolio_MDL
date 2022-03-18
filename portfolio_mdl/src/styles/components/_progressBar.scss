@@ -4,9 +4,10 @@
 	letter-spacing: normal;
 	font-family: 'Helvetica Neue Bold', 'Helvetica';
 	max-width: 100%;
+	@include responsiveProgressBar;
 	h3 {
 		padding-bottom: 5rem;
-		letter-spacing: 3px;
+		letter-spacing: 2px;
 		color: $white !important;
 	}
 	.years {
@@ -54,3 +55,4 @@
 		}
 	}
 }
+

@@ -1,6 +1,6 @@
 import React from 'react';
 import ProgressBar from './ProgressBar';
-import OtherSkills from './Otherskills';
+import OtherSkills from './OtherSkills';
 
 const SkillsList = () => {
 

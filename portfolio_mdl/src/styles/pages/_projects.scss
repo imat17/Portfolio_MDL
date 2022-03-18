@@ -8,17 +8,35 @@
 		text-align: center;
 	}
 	.projects__choise {
-        font-family: 'Helvetica Neue Bold', 'Helvetica';
+		font-family: 'Helvetica Neue Bold', 'Helvetica';
 		justify-content: space-evenly;
-        align-items: center;
-        display: flex;
-        margin-top: 4rem;
-        font-size: 20px;
-        p {
-            cursor: pointer;
-        }
+		align-items: center;
+		display: flex;
+		margin-top: 4rem;
+		font-size: 20px;
+		p {
+			cursor: pointer;
+		}
 		.active {
 			transform: scale(1.2);
 		}
 	}
 }
+
+// .anim__left {
+// 	-webkit-animation-name: fadeInLeftBig;
+// 	animation-name: fadeInLeftBig;
+// 	-webkit-animation-duration: 1.3s;
+// 	animation-duration: 1.3s;
+// 	-webkit-animation-fill-mode: both;
+// 	animation-fill-mode: both;
+// }
+
+// .anim__right {
+// 	-webkit-animation-name: fadeInRightBig;
+// 	animation-name: fadeInRightBig;
+// 	-webkit-animation-duration: 1.3s;
+// 	animation-duration: 1.3s;
+// 	-webkit-animation-fill-mode: both;
+// 	animation-fill-mode: both;
+// }

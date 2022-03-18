@@ -80,6 +80,5 @@ nav {
 @for $i from 1 to 5 {
 	.anim-#{$i} {
 		animation-delay: #{$i*0.1}s;
-		// animation-delay: calc($i / 10)s;
 	}
 }

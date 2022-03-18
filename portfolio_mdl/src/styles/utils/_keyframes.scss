@@ -69,7 +69,6 @@
 	}
 }
 
-
 @keyframes scale-up-hor-center {
 	0% {
 		-webkit-transform: scaleX(0.4);
@@ -95,14 +94,6 @@
 	}
 }
 
-@-webkit-keyframes fadeIn {
-	0% {
-		opacity: 0;
-	}
-	100% {
-		opacity: 1;
-	}
-}
 @keyframes fadeIn {
 	0% {
 		opacity: 0;
@@ -112,20 +103,33 @@
 	}
 }
 
-
-  @keyframes tracking-in-expand-fwd {
+@keyframes tracking-in-expand-fwd {
 	0% {
-	  letter-spacing: -0.5em;
-	  -webkit-transform: translateZ(-700px);
-			  transform: translateZ(-700px);
-	  opacity: 0;
+		letter-spacing: -0.5em;
+		-webkit-transform: translateZ(-700px);
+		transform: translateZ(-700px);
+		opacity: 0;
 	}
 	40% {
-	  opacity: 0.6;
+		opacity: 0.6;
 	}
 	100% {
-	  -webkit-transform: translateZ(0);
-			  transform: translateZ(0);
-	  opacity: 1;
+		-webkit-transform: translateZ(0);
+		transform: translateZ(0);
+		opacity: 1;
 	}
-  }
+}
+
+// Social
+
+@keyframes slideInRight {
+	0% {
+		-webkit-transform: translateX(100%);
+		transform: translateX(100%);
+		visibility: visible;
+	}
+	100% {
+		-webkit-transform: translateX(0);
+		transform: translateX(0);
+	}
+}

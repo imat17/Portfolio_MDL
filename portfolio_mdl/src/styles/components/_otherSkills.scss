@@ -1,11 +1,11 @@
 .others__skills {
 	font-family: 'Helvetica Neue Bold', 'Helvetica';
 	grid-area: B;
+	@include responsiveOthersSkills;
 	h3 {
 		color: $white !important;
 	}
 	.others__list {
-		padding-right: 2rem;
 		max-width: 100%;
 		display: flex;
 		flex-direction: column;
@@ -18,6 +18,7 @@
 				flex-direction: column;
 				justify-content: center;
 				align-items: center;
+				@include responsiveOthersSkillsLi;
 				p {
 					padding-top: 1rem;
 					max-width: 100%;
@@ -31,7 +32,6 @@
 	margin: 20px auto;
 	width: $circle-size;
 	height: $circle-size;
-
 	background-color: $circle-background;
 	border-radius: 50%;
 	.ko-progress-circle__slice,
@@ -59,6 +59,8 @@
 		border-radius: 50%;
 	}
 
+	$i: 0;
+	$increment: 180deg * 0.01;
 	@while $i <= 100 {
 		&[data-progress='#{$i}'] {
 			.ko-progress-circle__slice.full,
@@ -69,6 +71,54 @@
 				transform: rotate($increment * $i * 2);
 			}
 			$i: $i + 1;
+		}
+	}
+}
+
+@media screen and (max-width: 420px) {
+	.ko-progress-circle {
+		margin: 20px auto;
+		width: $half-circle-size;
+		height: $half-circle-size;
+		background-color: $circle-background;
+		border-radius: 50%;
+		.ko-progress-circle__slice,
+		.ko-progress-circle__fill {
+			width: $half-circle-size;
+			height: $half-circle-size;
+			position: absolute;
+			transition: transform $transition-length;
+			border-radius: 50%;
+		}
+		.ko-progress-circle__slice {
+			clip: rect(0px, $half-circle-size, $half-circle-size, $half-circle-size * 0.5);
+			.ko-progress-circle__fill {
+				clip: rect(0px, $half-circle-size * 0.5, $half-circle-size, 0px);
+				background-color: $red;
+			}
+		}
+		.ko-progress-circle__overlay {
+			width: $half-inset-size;
+			height: $half-inset-size;
+			position: absolute;
+			margin-left: ($half-circle-size - $half-inset-size) * 0.5;
+			margin-top: ($half-circle-size - $half-inset-size) * 0.5;
+			background-color: $inset-color;
+			border-radius: 50%;
+		}
+		$i: 0;
+		$increment: 180deg * 0.01;
+		@while $i <= 100 {
+			&[data-progress='#{$i}'] {
+				.ko-progress-circle__slice.full,
+				.ko-progress-circle__fill {
+					transform: rotate($increment * $i);
+				}
+				.ko-progress-circle__fill.ko-progress-circle__bar {
+					transform: rotate($increment * $i * 2);
+				}
+				$i: $i + 1;
+			}
 		}
 	}
 }
