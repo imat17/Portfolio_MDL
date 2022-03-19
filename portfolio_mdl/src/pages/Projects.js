@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 
 const Projects = () => {
 	const ref = useRef();
-	const [inViewRef, inView] = useInView({triggerOnce: true});
+	const [inViewRef, inView] = useInView({ triggerOnce: true });
 
 	const setRefs = useCallback(
 		(node) => {
