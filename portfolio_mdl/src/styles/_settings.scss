@@ -43,8 +43,8 @@ input:focus {
 }
 
 section {
-	width: 100vw;
-	height: 100vh;
+	min-width: 100vw;
+	min-height: 100vh;
 }
 
 h2 {
@@ -53,4 +53,9 @@ h2 {
 	font-size: 30px;
 	padding-top: 10rem;
 	text-align: center;
+}
+
+.reveal {
+	-webkit-animation: puff-in-center 1.2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+	animation: puff-in-center 1.2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
 }

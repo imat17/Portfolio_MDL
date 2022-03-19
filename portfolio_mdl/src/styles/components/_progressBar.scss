@@ -6,9 +6,10 @@
 	max-width: 100%;
 	@include responsiveProgressBar;
 	h3 {
-		padding-bottom: 5rem;
+		padding-bottom: 2rem;
 		letter-spacing: 2px;
 		color: $white !important;
+		@include responsiveH3;
 	}
 	.years {
 		font-size: 0.85rem;

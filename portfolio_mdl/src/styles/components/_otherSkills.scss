@@ -4,6 +4,7 @@
 	@include responsiveOthersSkills;
 	h3 {
 		color: $white !important;
+		@include responsiveH3;
 	}
 	.others__list {
 		max-width: 100%;

@@ -15,28 +15,16 @@ const Header = () => {
 					<div className='navbar__mobile'>
 						<ul className='ul__mobile'>
 							<a href='#section__two' className='anim-1'>
-								<li onClick={(e) => setToggle(!toggle)}>
-									COMPETENCES
-									<p className='border'></p>
-								</li>
+								<li onClick={(e) => setToggle(!toggle)}>COMPETENCES</li>
 							</a>
 							<a href='#section__three' className='anim-2'>
-								<li onClick={(e) => setToggle(!toggle)}>
-									PROJETS
-									<p className='border'></p>
-								</li>
+								<li onClick={(e) => setToggle(!toggle)}>PROJETS</li>
 							</a>
 							<a href='mailto:davailleleroy.matisse@gmail.com' className='anim-3'>
-								<li onClick={(e) => setToggle(!toggle)}>
-									CONTACT
-									<p className='border'></p>
-								</li>
+								<li onClick={(e) => setToggle(!toggle)}>CONTACT</li>
 							</a>
 							<div className='anim-4'>
-								<li onClick={(e) => setToggle(!toggle)}>
-									CV
-									<p className='border'></p>
-								</li>
+								<li onClick={(e) => setToggle(!toggle)}>CV</li>
 							</div>
 						</ul>
 					</div>

@@ -2,7 +2,7 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const Otherskills = () => {
-	const { ref, inView } = useInView();
+	const { ref, inView } = useInView({ threshold: 0.7, triggerOnce: true });
 
 	const skill = {
 		first: [

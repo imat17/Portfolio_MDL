@@ -2,7 +2,7 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const ProgressBar = (props) => {
-	const { ref, inView } = useInView({threshold: 1});
+	const { ref, inView } = useInView({ threshold: 0.7, triggerOnce: true });
 	return (
 		<div className='languages'>
 			<h3>Langages</h3>

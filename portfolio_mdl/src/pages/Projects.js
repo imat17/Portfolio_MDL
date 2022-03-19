@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 
 const Projects = () => {
 	const ref = useRef();
-	const [inViewRef, inView] = useInView();
+	const [inViewRef, inView] = useInView({triggerOnce: true});
 
 	const setRefs = useCallback(
 		(node) => {
@@ -54,9 +54,9 @@ const Projects = () => {
 	};
 
 	return (
-		<section id='section__three'>
-			<h2>Mes réalisations</h2>
-			<div className='projects__choise' ref={setRefs}>
+		<section id='section__three' ref={setRefs}>
+			<h2 className={inView ? 'reveal' : ''}>Mes réalisations</h2>
+			<div className='projects__choise'>
 				<p id='pro' className={inView ? 'anim__left' : ''} ref={ref} onClick={handleProject}>
 					Formation
 				</p>

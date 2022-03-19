@@ -1,5 +1,6 @@
 #section__three {
 	position: relative;
+	@include responsiveProjectsPage;
 	h3 {
 		color: $red;
 		font-family: 'Helvetica Neue Bold', 'Helvetica';
@@ -23,20 +24,12 @@
 	}
 }
 
-// .anim__left {
-// 	-webkit-animation-name: fadeInLeftBig;
-// 	animation-name: fadeInLeftBig;
-// 	-webkit-animation-duration: 1.3s;
-// 	animation-duration: 1.3s;
-// 	-webkit-animation-fill-mode: both;
-// 	animation-fill-mode: both;
-// }
+.anim__left {
+	-webkit-animation: slide-in-elliptic-left-fwd 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both .5s;
+	animation: slide-in-elliptic-left-fwd 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both .5s;
+}
 
-// .anim__right {
-// 	-webkit-animation-name: fadeInRightBig;
-// 	animation-name: fadeInRightBig;
-// 	-webkit-animation-duration: 1.3s;
-// 	animation-duration: 1.3s;
-// 	-webkit-animation-fill-mode: both;
-// 	animation-fill-mode: both;
-// }
+.anim__right {
+	-webkit-animation: slide-in-elliptic-right-fwd 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both .5s;
+	animation: slide-in-elliptic-right-fwd 1.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both .5s;
+}
