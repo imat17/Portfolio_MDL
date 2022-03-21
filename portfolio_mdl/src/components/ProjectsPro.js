@@ -4,10 +4,10 @@ import Carousel from 'react-elastic-carousel';
 import { useInView } from 'react-intersection-observer';
 
 const ProjectsPro = (props) => {
-	const { ref, inView } = useInView(0.5);
+	const { ref, inView } = useInView(0.2);
 
 	return (
-		<div className={`projects ${inView ? 'project-anim' :''}`} ref={ref}>
+		<div className={`projects ${inView ? 'project-anim' : ''}`} ref={ref}>
 			<Carousel itemsToScroll={1} itemsToShow={3} breakPoints={props.breakPoints}>
 				{FormationData.map((project) => (
 					<li key={project.id}>

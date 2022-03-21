@@ -47,7 +47,7 @@ section {
 }
 
 h2 {
-  color: #C32C5A;
+  color: #af2847;
   font-family: "Helvetica Neue Bold", "Helvetica";
   font-size: 30px;
   padding-top: 10rem;
@@ -274,7 +274,7 @@ nav ul li:hover .border {
 }
 nav ul .border {
   margin-top: 5px;
-  border-bottom: 2px solid #C32C5A;
+  border-bottom: 2px solid #af2847;
   width: 100%;
   visibility: hidden;
 }
@@ -348,10 +348,11 @@ nav .nav__responsive {
 
 .contact__form {
   font-family: "Helvetica Neue Light", "Helvetica";
-  z-index: 10000;
+  z-index: 9999;
   width: 100vw;
   height: 100vh;
-  top: 25%;
+  padding-top: 14%;
+  top: 0;
   right: 0;
   left: 0;
   bottom: 0;
@@ -359,11 +360,14 @@ nav .nav__responsive {
   display: flex;
   align-items: center;
   flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.9);
+  -webkit-animation: fadeIn 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: fadeIn 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
 .contact__form button {
   color: #f1f1f1;
   position: absolute;
-  background-color: #C32C5A;
+  background-color: #af2847;
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -377,11 +381,15 @@ nav .nav__responsive {
   padding-bottom: 50px;
 }
 .contact__form .contact__data p:nth-child(1) {
+  border-radius: 3px;
   font-family: "Helvetica Neue Bold", "Helvetica";
   font-size: 16px;
-  background-color: #C32C5A;
+  background-color: #af2847;
   padding: 18px;
   margin-bottom: 35px;
+}
+.contact__form .contact__data p:nth-child(2) {
+  letter-spacing: 1px;
 }
 .contact__form form input {
   font-family: "Helvetica", "Arial";
@@ -401,10 +409,13 @@ nav .nav__responsive {
   width: 100%;
 }
 .contact__form form .input__submit {
+  border-radius: 3px;
+  padding: 10px;
+  font-family: "Helvetica Neue Bold", "Helvetica";
   border: none;
   max-width: 20%;
   cursor: pointer;
-  background-color: #C32C5A;
+  background-color: #af2847;
 }
 .contact__form textarea {
   font-family: "Helvetica", "Arial";
@@ -472,7 +483,6 @@ nav .nav__responsive {
   }
 }
 #section__two h3 {
-  color: #C32C5A;
   font-family: "Helvetica Neue Bold", "Helvetica";
   font-size: 30px;
   padding-top: 8rem;
@@ -613,7 +623,7 @@ nav .nav__responsive {
 }
 .ko-progress-circle .ko-progress-circle__slice .ko-progress-circle__fill {
   clip: rect(0px, 37.5px, 75px, 0px);
-  background-color: #C32C5A;
+  background-color: #af2847;
 }
 .ko-progress-circle .ko-progress-circle__overlay {
   width: 65px;
@@ -1353,7 +1363,7 @@ nav .nav__responsive {
   }
   .ko-progress-circle .ko-progress-circle__slice .ko-progress-circle__fill {
     clip: rect(0px, 25px, 50px, 0px);
-    background-color: #C32C5A;
+    background-color: #af2847;
   }
   .ko-progress-circle .ko-progress-circle__overlay {
     width: 43.3px;
@@ -2195,7 +2205,7 @@ nav .nav__responsive {
   }
 }
 #section__three h3 {
-  color: #C32C5A;
+  color: #af2847;
   font-family: "Helvetica Neue Bold", "Helvetica";
   font-size: 30px;
   padding-top: 10rem;
@@ -2242,7 +2252,7 @@ nav .nav__responsive {
 }
 .projects .rec.rec-arrow {
   color: #f1f1f1;
-  background-color: #C32C5A;
+  background-color: #af2847;
 }
 @media screen and (max-width: 500px) {
   .projects .rec.rec-arrow {
@@ -2253,11 +2263,11 @@ nav .nav__responsive {
   }
 }
 .projects .rec.rec-arrow:hover {
-  color: #C32C5A;
+  color: #af2847;
   background-color: #f1f1f1;
 }
 .projects .rec.rec-dot {
-  background-color: #C32C5A;
+  background-color: #af2847;
 }
 .projects .rec.rec-dot:hover,
 .projects .rec.rec-dot :active {
@@ -2279,7 +2289,7 @@ nav .nav__responsive {
 .projects li h5 {
   font-family: "Helvetica Neue Light", "Helvetica";
   font-size: 35px;
-  color: #C32C5A;
+  color: #af2847;
 }
 @media screen and (max-width: 400px) {
   .projects li h5 {

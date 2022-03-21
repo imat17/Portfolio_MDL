@@ -11,10 +11,8 @@ const App = () => {
 
 	const displayModal = () => {
 		if (modalToggle === true) {
-			document.body.classList.add('active-modal');
 			return <Contact modalToggle={modalToggle} setModalToggle={setModalToggle} />;
-		} else if (modalToggle === false) {
-			document.body.classList.remove('active-modal');
+		} else {
 			return;
 		}
 	};

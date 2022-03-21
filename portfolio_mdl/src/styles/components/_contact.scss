@@ -1,44 +1,52 @@
 .contact__form {
 	font-family: 'Helvetica Neue Light', 'Helvetica';
-	z-index: 10000;
+	z-index: 9999;
 	width: 100vw;
 	height: 100vh;
-    top: 25%;
-    right: 0;
-    left: 0;
-    bottom: 0;
+	padding-top: 14%;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
 	position: fixed;
 	display: flex;
 	align-items: center;
 	flex-direction: column;
-    button {
-        color: $white;
-        position: absolute;
-        background-color: $red;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        cursor: pointer;
-        border: none;
-    }
+	background-color: rgba(0, 0, 0, 0.9);
+	-webkit-animation: fadeIn 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+	animation: fadeIn 1.2s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+	button {
+		color: $white;
+		position: absolute;
+		background-color: $red;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		cursor: pointer;
+		border: none;
+	}
 	.contact__data {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		padding-bottom: 50px;
 		p:nth-child(1) {
-            font-family: 'Helvetica Neue Bold', 'Helvetica';
-            font-size: 16px;
+			border-radius: 3px;
+			font-family: 'Helvetica Neue Bold', 'Helvetica';
+			font-size: 16px;
 			background-color: $red;
 			padding: 18px;
 			margin-bottom: 35px;
 		}
+		p:nth-child(2) {
+			letter-spacing: 1px;
+		}
 	}
 	form {
 		input {
-            font-family: 'Helvetica', 'Arial';
-            font-size: 16px;
-            color: $white;
+			font-family: 'Helvetica', 'Arial';
+			font-size: 16px;
+			color: $white;
 			padding: 15px;
 			border-bottom: 1px solid $white;
 			background-color: transparent;
@@ -53,22 +61,25 @@
 			width: 100%;
 		}
 		.input__submit {
-            border: none;
+			border-radius: 3px;
+			padding: 10px;
+			font-family: 'Helvetica Neue Bold', 'Helvetica';
+			border: none;
 			max-width: 20%;
-            cursor: pointer;
-            background-color: $red;
+			cursor: pointer;
+			background-color: $red;
 		}
 	}
-    textarea {
-        font-family: 'Helvetica', 'Arial';
-        font-size: 16px;
-        resize: none;
-        color: $white;
-        background-color: transparent;
-        margin-top: 15px;
-        width: 100%;
-        border: 1px solid $white;
-        border-radius: 4px;
-        padding: 2px;
-    }
+	textarea {
+		font-family: 'Helvetica', 'Arial';
+		font-size: 16px;
+		resize: none;
+		color: $white;
+		background-color: transparent;
+		margin-top: 15px;
+		width: 100%;
+		border: 1px solid $white;
+		border-radius: 4px;
+		padding: 2px;
+	}
 }

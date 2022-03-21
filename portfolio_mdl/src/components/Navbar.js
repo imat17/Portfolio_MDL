@@ -4,8 +4,12 @@ import List from '../images/icons/bars-solid.svg';
 import CV from '../images/cv-matisse-2022.pdf';
 
 const Header = ({ modalToggle, setModalToggle }) => {
-	console.log(modalToggle);
 	const [toggle, setToggle] = useState(false);
+
+	const handleToggle = () => {
+		setToggle(!toggle);
+		setModalToggle(!modalToggle);
+	};
 
 	const handleNav = () => {
 		if (toggle === false) {
@@ -21,9 +25,7 @@ const Header = ({ modalToggle, setModalToggle }) => {
 							<a href='#section__three' className='anim-2'>
 								<li onClick={(e) => setToggle(!toggle)}>PROJETS</li>
 							</a>
-							{/* <a href='mailto:davailleleroy.matisse@gmail.com' className='anim-3'>
-								<li onClick={(e) => setToggle(!toggle)}>CONTACT</li>
-							</a> */}
+							<li onClick={handleToggle}>CONTACT</li>
 							<div className='anim-4'>
 								<li onClick={(e) => setToggle(!toggle)}>CV</li>
 							</div>
@@ -53,12 +55,11 @@ const Header = ({ modalToggle, setModalToggle }) => {
 						<p className='border'></p>
 					</li>
 				</a>
-				<div>
-					<li onClick={(e) => setModalToggle(!modalToggle)}>
-						CONTACT
-						<p className='border'></p>
-					</li>
-				</div>
+
+				<li onClick={(e) => setModalToggle(!modalToggle)}>
+					CONTACT
+					<p className='border'></p>
+				</li>
 
 				<a href={CV} download>
 					<li>

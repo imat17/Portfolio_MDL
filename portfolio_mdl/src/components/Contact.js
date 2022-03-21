@@ -21,6 +21,7 @@ const Contact = ({ modalToggle, setModalToggle }) => {
 		emailjs.sendForm('service_rfv72ia', 'template_dvknlot', form.current, 'UeP17Ua2iOy_g7jKY').then(
 			(result) => {
 				console.log(result.text);
+				setModalToggle(!modalToggle);
 			},
 			(error) => {
 				console.log(error.text);
@@ -39,6 +40,7 @@ const Contact = ({ modalToggle, setModalToggle }) => {
 					<p>07 83 89 62 08</p>
 				</div>
 				<form ref={form} onSubmit={sendEmail}>
+					{/* <div> */}
 					<input
 						type='text'
 						aria-label='Nom'
@@ -46,6 +48,7 @@ const Contact = ({ modalToggle, setModalToggle }) => {
 						placeholder='Votre Nom'
 						value={toSend.name}
 						onChange={handleChange}
+						autocomplete='off'
 					/>
 
 					<input
@@ -55,7 +58,9 @@ const Contact = ({ modalToggle, setModalToggle }) => {
 						placeholder='Objet du contact'
 						value={toSend.object}
 						onChange={handleChange}
+						autocomplete='off'
 					/>
+					{/* </div> */}
 
 					<input
 						type='email'
@@ -64,6 +69,7 @@ const Contact = ({ modalToggle, setModalToggle }) => {
 						placeholder='Votre Email'
 						value={toSend.email}
 						onChange={handleChange}
+						autocomplete='off'
 					/>
 
 					<textarea
@@ -75,6 +81,7 @@ const Contact = ({ modalToggle, setModalToggle }) => {
 						placeholder='Votre message'
 						value={toSend.message}
 						onChange={handleChange}
+						autocomplete='off'
 					/>
 
 					<input className='input__submit' type='submit' value='Envoyer' />

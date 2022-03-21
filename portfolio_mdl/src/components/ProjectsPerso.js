@@ -4,7 +4,7 @@ import Carousel from 'react-elastic-carousel';
 import { useInView } from 'react-intersection-observer';
 
 const ProjectsPerso = (props) => {
-	const { ref, inView } = useInView(0.5);
+	const { ref, inView } = useInView(0.2);
 
 	return (
 		<div className={`projects ${inView ? 'project-anim' : ''}`} ref={ref}>
