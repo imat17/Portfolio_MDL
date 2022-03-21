@@ -3,7 +3,8 @@ import Logo from '../images/logo_mdl.png';
 import List from '../images/icons/bars-solid.svg';
 import CV from '../images/cv-matisse-2022.pdf';
 
-const Header = () => {
+const Header = ({ modalToggle, setModalToggle }) => {
+	console.log(modalToggle);
 	const [toggle, setToggle] = useState(false);
 
 	const handleNav = () => {
@@ -20,9 +21,9 @@ const Header = () => {
 							<a href='#section__three' className='anim-2'>
 								<li onClick={(e) => setToggle(!toggle)}>PROJETS</li>
 							</a>
-							<a href='mailto:davailleleroy.matisse@gmail.com' className='anim-3'>
+							{/* <a href='mailto:davailleleroy.matisse@gmail.com' className='anim-3'>
 								<li onClick={(e) => setToggle(!toggle)}>CONTACT</li>
-							</a>
+							</a> */}
 							<div className='anim-4'>
 								<li onClick={(e) => setToggle(!toggle)}>CV</li>
 							</div>
@@ -52,12 +53,13 @@ const Header = () => {
 						<p className='border'></p>
 					</li>
 				</a>
-				<a href='mailto:davailleleroy.matisse@gmail.com'>
-					<li>
+				<div>
+					<li onClick={(e) => setModalToggle(!modalToggle)}>
 						CONTACT
 						<p className='border'></p>
 					</li>
-				</a>
+				</div>
+
 				<a href={CV} download>
 					<li>
 						CV

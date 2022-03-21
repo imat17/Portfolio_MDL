@@ -20,6 +20,7 @@ body {
   background-color: #1d1d1d;
   color: #f1f1f1;
   letter-spacing: 2px;
+  overflow-x: hidden;
 }
 
 body::-webkit-scrollbar {
@@ -345,6 +346,79 @@ nav .nav__responsive {
   animation-delay: 0.4s;
 }
 
+.contact__form {
+  font-family: "Helvetica Neue Light", "Helvetica";
+  z-index: 10000;
+  width: 100vw;
+  height: 100vh;
+  top: 25%;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.contact__form button {
+  color: #f1f1f1;
+  position: absolute;
+  background-color: #C32C5A;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+.contact__form .contact__data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 50px;
+}
+.contact__form .contact__data p:nth-child(1) {
+  font-family: "Helvetica Neue Bold", "Helvetica";
+  font-size: 16px;
+  background-color: #C32C5A;
+  padding: 18px;
+  margin-bottom: 35px;
+}
+.contact__form form input {
+  font-family: "Helvetica", "Arial";
+  font-size: 16px;
+  color: #f1f1f1;
+  padding: 15px;
+  border-bottom: 1px solid #f1f1f1;
+  background-color: transparent;
+}
+.contact__form form input:nth-child(1) {
+  width: 50%;
+}
+.contact__form form input:nth-child(2) {
+  width: 50%;
+}
+.contact__form form input:nth-child(3) {
+  width: 100%;
+}
+.contact__form form .input__submit {
+  border: none;
+  max-width: 20%;
+  cursor: pointer;
+  background-color: #C32C5A;
+}
+.contact__form textarea {
+  font-family: "Helvetica", "Arial";
+  font-size: 16px;
+  resize: none;
+  color: #f1f1f1;
+  background-color: transparent;
+  margin-top: 15px;
+  width: 100%;
+  border: 1px solid #f1f1f1;
+  border-radius: 4px;
+  padding: 2px;
+}
+
 .social {
   position: fixed;
   z-index: 999;
@@ -370,26 +444,6 @@ nav .nav__responsive {
 }
 .social img {
   width: 30px;
-}
-
-.scroll__bottom {
-  width: 50px;
-  height: 75px;
-  position: absolute;
-  left: 50%;
-  bottom: 0;
-  transform: translate(-50%, -50%);
-}
-.scroll__bottom:hover {
-  -webkit-animation-name: bounce;
-  animation-name: bounce;
-  -webkit-transform-origin: center top;
-  -ms-transform-origin: center top;
-  transform-origin: center top;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
 }
 
 #section__one {
@@ -2051,7 +2105,7 @@ nav .nav__responsive {
 }
 .container__text p:nth-child(2) {
   font-size: 30px;
-  animation: focus-in-expand 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
+  animation: focus-in-expand 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
 }
 @media screen and (max-width: 400px) {
   .container__text p:nth-child(2) {
@@ -2065,7 +2119,7 @@ nav .nav__responsive {
 }
 .container__text p:nth-child(3) {
   font-size: 20px;
-  animation: focus-in-expand 2.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 3s both;
+  animation: focus-in-expand 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 3s both;
 }
 @media screen and (max-width: 400px) {
   .container__text p:nth-child(3) {
@@ -2177,9 +2231,26 @@ nav .nav__responsive {
   padding: 10px;
   opacity: 0;
 }
+.projects button {
+  margin: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.projects .rec.rec-slider-container {
+  margin: 0 5px;
+}
 .projects .rec.rec-arrow {
   color: #f1f1f1;
   background-color: #C32C5A;
+}
+@media screen and (max-width: 500px) {
+  .projects .rec.rec-arrow {
+    min-width: 35px;
+    width: 35px;
+    height: 35px;
+    font-size: 20px;
+  }
 }
 .projects .rec.rec-arrow:hover {
   color: #C32C5A;
@@ -2210,6 +2281,11 @@ nav .nav__responsive {
   font-size: 35px;
   color: #C32C5A;
 }
+@media screen and (max-width: 400px) {
+  .projects li h5 {
+    font-size: 25px;
+  }
+}
 .projects li .projects__img {
   padding-top: 2rem;
   max-width: 35rem;
@@ -2221,7 +2297,7 @@ nav .nav__responsive {
 .projects li p {
   font-family: "Helvetica Neue Light", "Helvetica";
   padding-top: 15px;
-  max-width: 70%;
+  max-width: 97%;
 }
 .projects li .icons {
   padding-top: 20px;

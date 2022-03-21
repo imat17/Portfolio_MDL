@@ -20,6 +20,11 @@ body {
 	background-color: $bg-black;
 	color: $white;
 	letter-spacing: 2px;
+	overflow-x: hidden;
+}
+
+body.active-modal:not(.contact__form)  {
+	// opacity: 0.7;
 }
 
 body::-webkit-scrollbar {

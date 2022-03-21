@@ -123,14 +123,29 @@
 
 @mixin responsiveH3 {
 	@media screen and (max-width: 400px) {
-		font-size: 20px!important;
+		font-size: 20px !important;
 	}
 }
 
-// Page Projects 
+// Page Projects
 
 @mixin responsiveProjectsPage {
 	@media screen and (max-width: 400px) {
 		margin-top: 5rem;
+	}
+}
+
+@mixin responsiveProjectsTitle {
+	@media screen and (max-width: 400px) {
+		font-size: 25px;
+	}
+}
+
+@mixin responsiveSlideBtn {
+	@media screen and (max-width: 500px) {
+		min-width: 35px;
+		width: 35px;
+		height: 35px;
+		font-size: 20px;
 	}
 }
