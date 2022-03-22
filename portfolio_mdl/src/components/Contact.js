@@ -21,7 +21,11 @@ const Contact = ({ modalToggle, setModalToggle }) => {
 		emailjs.sendForm('service_rfv72ia', 'template_dvknlot', form.current, 'UeP17Ua2iOy_g7jKY').then(
 			(result) => {
 				console.log(result.text);
-				setModalToggle(!modalToggle);
+				let form = document.querySelector('.contact__form');
+				form.classList.add('anim__form');
+				setTimeout(() => {
+					setModalToggle(!modalToggle);
+				}, 1300);
 			},
 			(error) => {
 				console.log(error.text);
@@ -29,10 +33,18 @@ const Contact = ({ modalToggle, setModalToggle }) => {
 		);
 	};
 
+	const formClosingAnimation = () => {
+		let form = document.querySelector('.contact__form');
+		form.classList.add('anim__form');
+		setTimeout(() => {
+			setModalToggle(!modalToggle);
+		}, 1200);
+	};
+
 	return (
 		<div className='contact__form' id='contact__form'>
-			<div>
-				<button aria-label='Fermer' onClick={(e) => setModalToggle(!modalToggle)}>
+			<div className='form__container'>
+				<button aria-label='Fermer' onClick={formClosingAnimation}>
 					X
 				</button>
 				<div className='contact__data'>
@@ -40,29 +52,30 @@ const Contact = ({ modalToggle, setModalToggle }) => {
 					<p>07 83 89 62 08</p>
 				</div>
 				<form ref={form} onSubmit={sendEmail}>
-					{/* <div> */}
-					<input
-						type='text'
-						aria-label='Nom'
-						name='from_name'
-						placeholder='Votre Nom'
-						value={toSend.name}
-						onChange={handleChange}
-						autocomplete='off'
-					/>
+					<div>
+						<input
+							type='text'
+							aria-label='Nom'
+							name='from_name'
+							placeholder='Votre Nom'
+							value={toSend.name}
+							onChange={handleChange}
+							autocomplete='off'
+						/>
+
+						<input
+							type='text'
+							aria-label='Objet du contact'
+							name='from_object'
+							placeholder='Objet du contact'
+							value={toSend.object}
+							onChange={handleChange}
+							autocomplete='off'
+						/>
+					</div>
 
 					<input
-						type='text'
-						aria-label='Objet du contact'
-						name='from_object'
-						placeholder='Objet du contact'
-						value={toSend.object}
-						onChange={handleChange}
-						autocomplete='off'
-					/>
-					{/* </div> */}
-
-					<input
+						className='input__email'
 						type='email'
 						name='from_email'
 						aria-label='Email'

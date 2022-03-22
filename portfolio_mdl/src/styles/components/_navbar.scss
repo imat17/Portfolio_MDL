@@ -48,7 +48,7 @@ nav {
 	.nav__responsive {
 		cursor: pointer;
 		position: absolute;
-		top: 0.5rem;
+		top: -7px;
 		right: 3rem;
 		@include navbarMobileDisplay;
 	}
@@ -62,7 +62,7 @@ nav {
 	z-index: 999;
 	width: 150px;
 	.ul__mobile {
-		margin-top: 15px;
+		margin-top: 20px;
 		display: flex;
 		flex-direction: column;
 		a,
@@ -79,6 +79,6 @@ nav {
 
 @for $i from 1 to 5 {
 	.anim-#{$i} {
-		animation-delay: #{$i*0.1}s;
+		animation-delay: #{$i * 0.1}s;
 	}
 }

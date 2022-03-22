@@ -149,3 +149,26 @@
 		font-size: 20px;
 	}
 }
+
+// Contact form
+@mixin responsiveForm {
+	@media screen and (max-width: 530px) {
+		max-width: 80vw;
+	}
+}
+
+@mixin responsiveFormP {
+	@media screen and (max-width: 530px) {
+		padding: 12px;
+		font-size: 14px;
+		margin-top: 2rem;
+	}
+}
+
+@mixin responsiveFormSubmit {
+	@media screen and (max-width: 530px) {
+		max-width: 35%;
+		padding: 10px;
+		font-size: 12px;
+	}
+}
