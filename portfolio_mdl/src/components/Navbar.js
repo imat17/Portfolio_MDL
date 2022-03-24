@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Logo from '../images/logo_mdl.png';
 import List from '../images/icons/bars-solid.svg';
-import CV from '../images/cv-matisse-2022.pdf';
+import CV from '../images/CV-MATISSE.pdf';
 
 const Header = ({ modalToggle, setModalToggle }) => {
 	const [toggle, setToggle] = useState(false);

@@ -167,6 +167,18 @@ h2 {
     transform: translateX(0);
   }
 }
+@keyframes slide-in-fwd-center {
+  0% {
+    -webkit-transform: translateZ(-1400px);
+    transform: translateZ(-1400px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    opacity: 1;
+  }
+}
 @keyframes slide-in-bck-bottom {
   0% {
     -webkit-transform: translateZ(700px) translateY(300px);
@@ -292,7 +304,6 @@ nav span {
 nav .nav__responsive {
   cursor: pointer;
   position: absolute;
-  top: -7px;
   right: 3rem;
 }
 @media screen and (min-width: 615px) {
@@ -304,6 +315,9 @@ nav .nav__responsive {
   nav .nav__responsive {
     display: block;
   }
+}
+nav .nav__responsive img {
+  width: 35px;
 }
 
 .navbar__mobile {
@@ -324,12 +338,15 @@ nav .nav__responsive {
   }
 }
 .navbar__mobile .ul__mobile {
+  font-family: "Helvetica Neue Light", "Helvetica", "Arial";
+  font-weight: lighter;
   margin-top: 20px;
   display: flex;
   flex-direction: column;
 }
 .navbar__mobile .ul__mobile a,
 .navbar__mobile .ul__mobile div {
+  padding-bottom: 3px;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
   -webkit-animation-duration: 1s;
@@ -359,7 +376,7 @@ nav .nav__responsive {
   z-index: 9999;
   width: 100vw;
   height: 100vh;
-  padding-top: 25vh;
+  padding-top: 23vh;
   top: 0;
   right: 0;
   left: 0;
@@ -368,7 +385,7 @@ nav .nav__responsive {
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.75);
   -webkit-animation: fadeIn 1.1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   animation: fadeIn 1.1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
@@ -408,7 +425,7 @@ nav .nav__responsive {
   .contact__form .contact__data p:nth-child(1) {
     padding: 12px;
     font-size: 14px;
-    margin-top: 2rem;
+    margin-top: 1.8rem;
   }
 }
 .contact__form .contact__data p:nth-child(2) {
@@ -571,7 +588,8 @@ nav .nav__responsive {
 }
 .languages .years span:nth-child(2):before, .languages .years span:nth-child(3):before {
   content: "";
-  background: rgba(180, 179, 179, 0.5);
+  background: #af2847;
+  opacity: 0.9;
   position: absolute;
   height: 155px;
   width: 1px;
@@ -2152,7 +2170,7 @@ nav .nav__responsive {
 }
 .container__text p:nth-child(2) {
   font-size: 30px;
-  animation: focus-in-expand 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2s both;
+  animation: focus-in-expand 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.6s both;
 }
 @media screen and (max-width: 400px) {
   .container__text p:nth-child(2) {
@@ -2166,7 +2184,7 @@ nav .nav__responsive {
 }
 .container__text p:nth-child(3) {
   font-size: 20px;
-  animation: focus-in-expand 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 3s both;
+  animation: focus-in-expand 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.6s both;
 }
 @media screen and (max-width: 400px) {
   .container__text p:nth-child(3) {
@@ -2187,7 +2205,7 @@ nav .nav__responsive {
   overflow: hidden;
   white-space: nowrap;
   position: relative;
-  animation: typing 2s steps(29);
+  animation: typing 1.5s steps(29);
 }
 .typewriter__container .typewriter p::after {
   content: "";
@@ -2225,7 +2243,7 @@ nav .nav__responsive {
 }
 @media screen and (max-width: 575px) {
   .letter {
-    top: 70%;
+    top: 77%;
     width: 85vw;
   }
 }
@@ -2249,6 +2267,7 @@ nav .nav__responsive {
   text-align: center;
 }
 #section__three .projects__choise {
+  width: 100%;
   font-family: "Helvetica Neue Bold", "Helvetica";
   justify-content: space-evenly;
   align-items: center;
@@ -2259,8 +2278,13 @@ nav .nav__responsive {
 #section__three .projects__choise p {
   cursor: pointer;
 }
-#section__three .projects__choise .active {
-  transform: scale(1.2);
+
+.active__title {
+  transform: scale(1.2) !important;
+}
+
+.active__opacity {
+  opacity: 0.75;
 }
 
 .anim__left {
@@ -2291,12 +2315,17 @@ nav .nav__responsive {
   color: #f1f1f1;
   background-color: #af2847;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 735px) {
   .projects .rec.rec-arrow {
     min-width: 35px;
     width: 35px;
     height: 35px;
     font-size: 20px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .projects .rec.rec-arrow {
+    display: none;
   }
 }
 .projects .rec.rec-arrow:hover {
@@ -2325,7 +2354,7 @@ nav .nav__responsive {
 }
 .projects li h5 {
   font-family: "Helvetica Neue Light", "Helvetica";
-  font-size: 35px;
+  font-size: 30px;
   color: #af2847;
 }
 @media screen and (max-width: 400px) {
@@ -2358,7 +2387,6 @@ nav .nav__responsive {
 }
 
 .project-anim {
-  opacity: 1;
-  -webkit-animation: slide-in-bck-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-  animation: slide-in-bck-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  -webkit-animation: slide-in-fwd-center 3.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-fwd-center 3.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }/*# sourceMappingURL=index.css.map */

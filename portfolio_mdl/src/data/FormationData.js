@@ -14,7 +14,7 @@ export const FormationData = [
 		languages: ['html', 'sass'],
 		languagesIcons: ['./media/html.png', './media/sass.png', './media/react.png'],
 		source: 'https://github.com/imat17/P3-React',
-		info: `Réalisation d'une page d'accueil ainsi que des pages restaurants pour une entreprise fictive à partir d'une maquette. Approche mobile-first.`,
+		info: `Réalisation d'une page d'accueil ainsi que des pages restaurants pour une entreprise fictive à partir d'une maquette. Approche mobile-first / Refait en React.`,
 		picture: './media/p3.jpg',
 	},
 	{

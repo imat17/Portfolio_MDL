@@ -81,7 +81,7 @@
 		left: 50%;
 	}
 	@media screen and (max-width: 575px) {
-		top: 70%;
+		top: 77%;
 		width: 85vw;
 	}
 }
@@ -142,15 +142,19 @@
 }
 
 @mixin responsiveSlideBtn {
-	@media screen and (max-width: 500px) {
+	@media screen and (max-width: 735px) {
 		min-width: 35px;
 		width: 35px;
 		height: 35px;
 		font-size: 20px;
 	}
+	@media screen and (max-width: 500px) {
+		display: none;
+	}
 }
 
 // Contact form
+
 @mixin responsiveForm {
 	@media screen and (max-width: 530px) {
 		max-width: 80vw;
@@ -161,7 +165,7 @@
 	@media screen and (max-width: 530px) {
 		padding: 12px;
 		font-size: 14px;
-		margin-top: 2rem;
+		margin-top: 1.8rem;
 	}
 }
 

@@ -21,18 +21,26 @@ const Projects = () => {
 
 	const pro = document.querySelector('#pro');
 	const perso = document.querySelector('#perso');
+	const border = document.querySelector('.border');
 
 	const handleProject = (e) => {
 		if (e.target.id === 'pro') {
 			setProjectPerso(false);
 			setProjectPro(true);
-			pro.classList.add('active');
-			perso.classList.remove('active');
+			pro.classList.remove('anim__left');
+			border.classList.add('.active__border');
+			pro.classList.add('active__title');
+			perso.classList.remove('active__title');
+			pro.classList.remove('active__opacity');
+			perso.classList.add('active__opacity');
 		} else if (e.target.id === 'perso') {
 			setProjectPerso(true);
 			setProjectPro(false);
-			perso.classList.add('active');
-			pro.classList.remove('active');
+			perso.classList.remove('anim__right');
+			perso.classList.add('active__title');
+			pro.classList.remove('active__title');
+			perso.classList.remove('active__opacity');
+			pro.classList.add('active__opacity');
 		}
 	};
 
@@ -59,9 +67,11 @@ const Projects = () => {
 			<div className='projects__choise'>
 				<p id='pro' className={inView ? 'anim__left' : ''} ref={ref} onClick={handleProject}>
 					Formation
+					<p className='border'></p>
 				</p>
 				<p id='perso' className={inView ? 'anim__right' : ''} ref={ref} onClick={handleProject}>
-					Personnels
+					Personnelles
+					<p className='border'></p>
 				</p>
 			</div>
 			{projectsToggle()}

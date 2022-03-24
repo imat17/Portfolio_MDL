@@ -1,7 +1,7 @@
 export const PersonnalData = [
 	{
 		id: 1,
-		name: 'Flore Leroy - Graphisme',
+		name: 'FL - Graphisme',
 		languages: ['javascript', 'sass'],
 		languagesIcons: ['./media/sass.png', './media/javascript.png'],
 		source: 'https://www.floreleroy-graphisme.fr',

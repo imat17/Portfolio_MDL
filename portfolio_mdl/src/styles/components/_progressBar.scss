@@ -28,7 +28,9 @@
 			&:nth-child(2):before,
 			&:nth-child(3):before {
 				content: '';
-				background: rgba(180, 179, 179, 0.5);
+				background: $red;
+				opacity: 0.9;
+				// background: rgba(180, 179, 179, 0.5);
 				position: absolute;
 				height: 155px;
 				width: 1px;

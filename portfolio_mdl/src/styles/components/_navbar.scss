@@ -48,9 +48,11 @@ nav {
 	.nav__responsive {
 		cursor: pointer;
 		position: absolute;
-		top: -7px;
 		right: 3rem;
 		@include navbarMobileDisplay;
+		img {
+			width: 35px;
+		}
 	}
 }
 
@@ -62,11 +64,14 @@ nav {
 	z-index: 999;
 	width: 150px;
 	.ul__mobile {
+		font-family: 'Helvetica Neue Light', 'Helvetica', 'Arial';
+		font-weight: lighter;
 		margin-top: 20px;
 		display: flex;
 		flex-direction: column;
 		a,
 		div {
+			padding-bottom: 3px;
 			-webkit-animation-name: fadeIn;
 			animation-name: fadeIn;
 			-webkit-animation-duration: 1s;

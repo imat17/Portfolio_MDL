@@ -42,7 +42,7 @@
 		flex-direction: column;
 		h5 {
 			font-family: 'Helvetica Neue Light', 'Helvetica';
-			font-size: 35px;
+			font-size: 30px;
 			color: $red;
 			@include responsiveProjectsTitle;
 		}
@@ -73,7 +73,6 @@
 }
 
 .project-anim {
-	opacity: 1;
-	-webkit-animation: slide-in-bck-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-	animation: slide-in-bck-bottom 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	-webkit-animation: slide-in-fwd-center 3.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	animation: slide-in-fwd-center 3.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
