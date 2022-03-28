@@ -28,9 +28,9 @@ const Header = ({ modalToggle, setModalToggle }) => {
 							<div className='anim-3'>
 								<li onClick={handleToggle}>CONTACT</li>
 							</div>
-							<div className='anim-4'>
+							<a href={CV} download className='anim-4'>
 								<li onClick={(e) => setToggle(!toggle)}>CV</li>
-							</div>
+							</a>
 						</ul>
 					</div>
 				</>
@@ -70,9 +70,6 @@ const Header = ({ modalToggle, setModalToggle }) => {
 					</li>
 				</a>
 			</ul>
-			<span>
-				<img src={List} alt='nav list' />
-			</span>
 			<div className='nav__responsive' onClick={() => setToggle(!toggle)}>
 				<img src={List} alt='Navigation mobile' />
 			</div>

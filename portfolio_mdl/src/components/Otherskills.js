@@ -2,7 +2,7 @@ import React from 'react';
 import { useInView } from 'react-intersection-observer';
 
 const Otherskills = () => {
-	const { ref, inView } = useInView({ triggerOnce: true });
+	const { ref, inView } = useInView();
 
 	const skill = {
 		first: [

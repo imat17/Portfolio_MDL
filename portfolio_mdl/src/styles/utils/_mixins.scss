@@ -24,9 +24,6 @@
 	@media screen and (min-width: 615px) {
 		display: none;
 	}
-	@media screen and (max-width: 615px) {
-		display: block;
-	}
 }
 
 //------------HOME TEXT------------------
@@ -174,5 +171,19 @@
 		max-width: 35%;
 		padding: 10px;
 		font-size: 12px;
+	}
+}
+
+// Section
+
+@mixin responsiveBigScreen {
+	@media screen and (min-width: 1440px) {
+		padding-top: 20vh;
+	}
+}
+
+@mixin responsiveBigScreenImg {
+	@media screen and (min-width: 1440px) {
+		max-width: 45rem;
 	}
 }

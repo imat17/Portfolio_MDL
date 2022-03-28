@@ -53,6 +53,11 @@ h2 {
   padding-top: 10rem;
   text-align: center;
 }
+@media screen and (min-width: 1440px) {
+  h2 {
+    padding-top: 20vh;
+  }
+}
 
 .reveal {
   -webkit-animation: puff-in-center 1.2s cubic-bezier(0.47, 0, 0.745, 0.715) both;
@@ -191,22 +196,6 @@ h2 {
     opacity: 1;
   }
 }
-@keyframes puff-in-center {
-  0% {
-    -webkit-transform: scale(2);
-    transform: scale(2);
-    -webkit-filter: blur(4px);
-    filter: blur(4px);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    -webkit-filter: blur(0px);
-    filter: blur(0px);
-    opacity: 1;
-  }
-}
 @keyframes slide-in-elliptic-left-fwd {
   0% {
     -webkit-transform: translateX(-800px) rotateY(30deg) scale(0);
@@ -298,9 +287,6 @@ nav ul .border {
   width: 100%;
   visibility: hidden;
 }
-nav span {
-  display: none;
-}
 nav .nav__responsive {
   cursor: pointer;
   position: absolute;
@@ -309,11 +295,6 @@ nav .nav__responsive {
 @media screen and (min-width: 615px) {
   nav .nav__responsive {
     display: none;
-  }
-}
-@media screen and (max-width: 615px) {
-  nav .nav__responsive {
-    display: block;
   }
 }
 nav .nav__responsive img {
@@ -330,11 +311,6 @@ nav .nav__responsive img {
 @media screen and (min-width: 615px) {
   .navbar__mobile {
     display: none;
-  }
-}
-@media screen and (max-width: 615px) {
-  .navbar__mobile {
-    display: block;
   }
 }
 .navbar__mobile .ul__mobile {
@@ -2170,7 +2146,7 @@ nav .nav__responsive img {
 }
 .container__text p:nth-child(2) {
   font-size: 30px;
-  animation: focus-in-expand 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.6s both;
+  animation: focus-in-expand 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.6s both;
 }
 @media screen and (max-width: 400px) {
   .container__text p:nth-child(2) {
@@ -2184,7 +2160,7 @@ nav .nav__responsive img {
 }
 .container__text p:nth-child(3) {
   font-size: 20px;
-  animation: focus-in-expand 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.6s both;
+  animation: focus-in-expand 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.6s both;
 }
 @media screen and (max-width: 400px) {
   .container__text p:nth-child(3) {
@@ -2205,7 +2181,7 @@ nav .nav__responsive img {
   overflow: hidden;
   white-space: nowrap;
   position: relative;
-  animation: typing 1.5s steps(29);
+  animation: typing 2.2s steps(29);
 }
 .typewriter__container .typewriter p::after {
   content: "";
@@ -2365,6 +2341,11 @@ nav .nav__responsive img {
 .projects li .projects__img {
   padding-top: 2rem;
   max-width: 35rem;
+}
+@media screen and (min-width: 1440px) {
+  .projects li .projects__img {
+    max-width: 45rem;
+  }
 }
 .projects li .projects__img img {
   width: 100%;

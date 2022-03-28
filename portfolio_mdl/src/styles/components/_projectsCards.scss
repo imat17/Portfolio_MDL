@@ -49,6 +49,7 @@
 		.projects__img {
 			padding-top: 2rem;
 			max-width: 35rem;
+			@include responsiveBigScreenImg;
 			img {
 				width: 100%;
 				border-radius: 10px;
