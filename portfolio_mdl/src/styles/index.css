@@ -2340,11 +2340,11 @@ nav .nav__responsive img {
 }
 .projects li .projects__img {
   padding-top: 2rem;
-  max-width: 35rem;
+  max-width: 40rem;
 }
 @media screen and (min-width: 1440px) {
   .projects li .projects__img {
-    max-width: 45rem;
+    max-width: 50rem;
   }
 }
 .projects li .projects__img img {
