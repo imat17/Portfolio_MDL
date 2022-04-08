@@ -2,9 +2,8 @@
 	max-width: 65%;
 	margin-left: 80px;
 	padding-top: 300px;
-	// font-family: IBM Plex Mono, monospace;
-	font-family: 'Helvetica Neue Light', 'Helvetica', 'Arial';
 	@include responsiveHomeText;
+	font-family: 'Helvetica Neue Light', 'Helvetica';
 	p {
 		margin-bottom: 2rem;
 	}
@@ -15,12 +14,12 @@
 	p:nth-child(2) {
 		@include responsiveIamText;
 		font-size: 30px;
-		animation: focus-in-expand 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.6s both;
+		animation: focus-in-expand 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.4s both;
 	}
 	p:nth-child(3) {
 		@include responsiveInfoText;
 		font-size: 20px;
-		animation: focus-in-expand 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.6s both;
+		animation: focus-in-expand 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.4s both;
 	}
 }
 
@@ -31,7 +30,7 @@
 		overflow: hidden;
 		white-space: nowrap;
 		position: relative;
-		animation: typing 2.2s steps(29);
+		animation: typing 1.8s steps(29);
 	}
 	.typewriter p::after {
 		content: '';

@@ -16,31 +16,30 @@ const Projects = () => {
 		[inViewRef]
 	);
 
-	const [projectPro, setProjectPro] = useState(true);
-	const [projectPerso, setProjectPerso] = useState(false);
+	const [projectPro, setProjectPro] = useState(false);
+	const [projectPerso, setProjectPerso] = useState(true);
 
 	const pro = document.querySelector('#pro');
 	const perso = document.querySelector('#perso');
 	const border = document.querySelector('.border');
 
 	const handleProject = (e) => {
-		if (e.target.id === 'pro') {
-			setProjectPerso(false);
-			setProjectPro(true);
-			pro.classList.remove('anim__left');
-			border.classList.add('.active__border');
-			pro.classList.add('active__title');
-			perso.classList.remove('active__title');
-			pro.classList.remove('active__opacity');
-			perso.classList.add('active__opacity');
-		} else if (e.target.id === 'perso') {
+		if (e.target.id === 'perso') {
 			setProjectPerso(true);
 			setProjectPro(false);
-			perso.classList.remove('anim__right');
+			perso.classList.remove('anim__left');
+			pro.classList.add('active__opacity');
+			perso.classList.remove('active__opacity');
 			perso.classList.add('active__title');
 			pro.classList.remove('active__title');
-			perso.classList.remove('active__opacity');
-			pro.classList.add('active__opacity');
+		} else if (e.target.id === 'pro') {
+			setProjectPro(true);
+			setProjectPerso(false);
+			pro.classList.remove('anim__right');
+			perso.classList.add('active__opacity');
+			pro.classList.remove('active__opacity');
+			pro.classList.add('active__title');
+			perso.classList.remove('active__title');
 		}
 	};
 
@@ -65,12 +64,12 @@ const Projects = () => {
 		<section id='section__three' ref={setRefs}>
 			<h2 className={inView ? 'reveal' : ''}>Mes réalisations</h2>
 			<div className='projects__choise'>
-				<p id='pro' className={inView ? 'anim__left' : ''} ref={ref} onClick={handleProject}>
-					Formation
+				<p id='perso' className={inView ? 'anim__left' : ''} ref={ref} onClick={handleProject}>
+					Personnelles
 					<p className='border'></p>
 				</p>
-				<p id='perso' className={inView ? 'anim__right' : ''} ref={ref} onClick={handleProject}>
-					Personnelles
+				<p id='pro' className={inView ? 'anim__right' : ''} ref={ref} onClick={handleProject}>
+					Formation
 					<p className='border'></p>
 				</p>
 			</div>

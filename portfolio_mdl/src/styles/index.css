@@ -19,7 +19,7 @@ a {
 body {
   background-color: #1d1d1d;
   color: #f1f1f1;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   overflow-x: hidden;
 }
 
@@ -522,7 +522,6 @@ nav .nav__responsive img {
 .languages {
   grid-area: A;
   padding-left: 2rem;
-  letter-spacing: normal;
   font-family: "Helvetica Neue Bold", "Helvetica";
   max-width: 100%;
 }
@@ -2117,7 +2116,7 @@ nav .nav__responsive img {
   max-width: 65%;
   margin-left: 80px;
   padding-top: 300px;
-  font-family: "Helvetica Neue Light", "Helvetica", "Arial";
+  font-family: "Helvetica Neue Light", "Helvetica";
 }
 @media screen and (max-width: 1250px) {
   .container__text {
@@ -2146,7 +2145,7 @@ nav .nav__responsive img {
 }
 .container__text p:nth-child(2) {
   font-size: 30px;
-  animation: focus-in-expand 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.6s both;
+  animation: focus-in-expand 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.4s both;
 }
 @media screen and (max-width: 400px) {
   .container__text p:nth-child(2) {
@@ -2160,7 +2159,7 @@ nav .nav__responsive img {
 }
 .container__text p:nth-child(3) {
   font-size: 20px;
-  animation: focus-in-expand 2.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.6s both;
+  animation: focus-in-expand 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.4s both;
 }
 @media screen and (max-width: 400px) {
   .container__text p:nth-child(3) {
@@ -2181,7 +2180,7 @@ nav .nav__responsive img {
   overflow: hidden;
   white-space: nowrap;
   position: relative;
-  animation: typing 2.2s steps(29);
+  animation: typing 1.8s steps(29);
 }
 .typewriter__container .typewriter p::after {
   content: "";
@@ -2290,14 +2289,10 @@ nav .nav__responsive img {
 .projects .rec.rec-arrow {
   color: #f1f1f1;
   background-color: #af2847;
-}
-@media screen and (max-width: 735px) {
-  .projects .rec.rec-arrow {
-    min-width: 35px;
-    width: 35px;
-    height: 35px;
-    font-size: 20px;
-  }
+  min-width: 35px;
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
 }
 @media screen and (max-width: 500px) {
   .projects .rec.rec-arrow {
@@ -2313,14 +2308,14 @@ nav .nav__responsive img {
 }
 .projects .rec.rec-dot:hover,
 .projects .rec.rec-dot :active {
-  box-shadow: 0 0 1px 3px white !important;
+  box-shadow: 0 0 1px 3px rgb(255, 255, 255) !important;
 }
 .projects .lcUbOd {
-  box-shadow: 0 0 1px 3px white !important;
+  box-shadow: 0 0 1px 3px rgb(255, 255, 255) !important;
 }
 .projects .lcUbOd:hover,
 .projects .lcUbOd :active {
-  box-shadow: 0 0 1px 3px white !important;
+  box-shadow: 0 0 1px 3px rgb(255, 255, 255) !important;
 }
 .projects li {
   display: flex;
@@ -2365,6 +2360,7 @@ nav .nav__responsive img {
 }
 .projects li a {
   padding-top: 15px;
+  font-family: "Helvetica Neue Bold", "Helvetica";
 }
 
 .project-anim {

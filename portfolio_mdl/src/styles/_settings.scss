@@ -19,9 +19,9 @@ a {
 body {
 	background-color: $bg-black;
 	color: $white;
-	letter-spacing: 2px;
+	letter-spacing: 1px;
 	overflow-x: hidden;
-	// font-family: IBM Plex Mono, monospace;
+	// font-family: 'Space Grotesk', sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -51,7 +51,6 @@ section {
 
 h2 {
 	color: $red;
-	// font-family: IBM Plex Mono, monospace;
 	font-family: 'Helvetica Neue Bold', 'Helvetica';
 	font-size: 30px;
 	padding-top: 10rem;

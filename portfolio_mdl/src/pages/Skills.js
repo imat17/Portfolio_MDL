@@ -7,9 +7,11 @@ const Skills = () => {
 
 	return (
 		<section id='section__two'>
-			<h2 ref={ref} className={inView ? 'reveal' : ''}>
-				Mes compétences
-			</h2>
+			<div className='about'>
+				<h2 ref={ref} className={inView ? 'reveal' : ''}>
+					Mes compétences
+				</h2>
+			</div>
 			<SkillsList />
 		</section>
 	);

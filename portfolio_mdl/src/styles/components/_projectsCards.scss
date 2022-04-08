@@ -14,6 +14,10 @@
 	.rec.rec-arrow {
 		color: $white;
 		background-color: $red;
+		min-width: 35px;
+		width: 35px;
+		height: 35px;
+		font-size: 20px;
 		@include responsiveSlideBtn;
 		&:hover {
 			color: $red;
@@ -24,14 +28,14 @@
 		background-color: $red;
 		&:hover,
 		:active {
-			box-shadow: 0 0 1px 3px rgb(255, 255, 255) !important;
+			box-shadow: 0 0 1px 3px rgb(255, 255, 255)!important;
 		}
 	}
 	.lcUbOd {
-		box-shadow: 0 0 1px 3px rgb(255, 255, 255) !important;
+		box-shadow: 0 0 1px 3px rgb(255, 255, 255)!important;
 		&:hover,
 		:active {
-			box-shadow: 0 0 1px 3px rgb(255, 255, 255) !important;
+			box-shadow: 0 0 1px 3px rgb(255, 255, 255)!important;
 		}
 	}
 
@@ -69,6 +73,7 @@
 		}
 		a {
 			padding-top: 15px;
+			font-family: 'Helvetica Neue Bold', 'Helvetica';
 		}
 	}
 }
