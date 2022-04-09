@@ -1,0 +1,27 @@
+.technologies {
+    padding-top: 15vh;
+    &__text {
+        @include responsiveAboutTitle;
+        p {
+            color: $font-soft;
+            font-size: 23px;
+            margin-top: 25px;
+            text-align: left;
+        }
+    }
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        margin-top: 4rem;
+        margin-bottom: 4rem;
+        gap: 40px;
+        @include responsiveGrid;
+        h4 {
+            font-size: 27px;
+            padding-bottom: 10px;
+        }
+        p {
+            color: #f1f1f1;
+        }
+    }
+}

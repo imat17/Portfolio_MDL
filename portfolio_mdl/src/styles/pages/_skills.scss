@@ -1,15 +1,5 @@
 #section__two {
-	position: relative;
-	.skills__grid {
-		display: grid;
-		align-items: center;
-		grid-template-areas: 'A  B';
-		grid-column-gap: 5rem;
-		grid-template-columns: 1fr 1fr;
-		@include responsiveSkills;
-	}
 	h3 {
-		font-family: 'Helvetica Neue Bold', 'Helvetica';
 		font-size: 30px;
 		padding-top: 8rem;
 		text-align: center;

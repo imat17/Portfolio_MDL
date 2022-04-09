@@ -19,13 +19,15 @@ const App = () => {
 	return (
 		<>
 			<Navbar modalToggle={modalToggle} setModalToggle={setModalToggle} />
-			{displayModal()}
-			<Social />
-			<div className='container__global'>
-				<Home />
-				<Skills />
-				<Projects />
-			</div>
+			<main>
+				{displayModal()}
+				<Social />
+				<div className='container__global'>
+					<Home />
+					<Skills />
+					<Projects />
+				</div>
+			</main>
 		</>
 	);
 };

@@ -30,38 +30,31 @@
 
 @mixin responsiveHomeText {
 	@media screen and (max-width: 1250px) {
-		padding-top: 200px;
-		max-width: 100% !important;
-		margin-left: 1rem;
-		margin-right: 0.5rem;
+		padding-top: 150px;
 	}
 }
 
-@mixin responsiveHelloText {
-	@media screen and (max-width: 400px) {
-		font-size: 5.5vw;
-		font-family: 'Helvetica Neue Bold', 'Helvetica';
+@mixin responsiveTitleSize {
+	@media screen and (max-width: 610px) {
+		font-size: 60px;
 	}
-	@media screen and (min-width: 400px) and (max-width: 1110px) {
-		font-size: 5.8vw;
+	@media screen and (max-width: 460px) {
+		font-size: 45px;
 	}
-}
-
-@mixin responsiveIamText {
-	@media screen and (max-width: 400px) {
-		font-size: 5.5vw;
-	}
-	@media screen and (min-width: 400px) and (max-width: 650px) {
-		font-size: 4.3vw;
+	@media screen and (max-width: 350px) {
+		font-size: 35px;
 	}
 }
 
-@mixin responsiveInfoText {
-	@media screen and (max-width: 400px) {
-		font-size: 4.5vw;
+@mixin responsiveP1size {
+	@media screen and (max-width: 350px) {
+		font-size: 25px;
 	}
-	@media screen and (min-width: 400px) and (max-width: 650px) {
-		font-size: 3.3vw;
+}
+
+@mixin responsiveP2size {
+	@media screen and (max-width: 350px) {
+		font-size: 19px;
 	}
 }
 
@@ -83,44 +76,41 @@
 	}
 }
 
-// Page skills
+// A propos 
 
-@mixin responsiveSkills {
-	@media screen and (max-width: 900px) {
-		grid-template-areas:
-			'A'
-			'B';
-		grid-template-columns: auto;
-	}
-	@media screen and (max-width: 420px) {
-		display: block;
+@mixin responsiveAboutTitle {
+	@media screen and (max-width: 400px) {
+		h2 {
+			font-size: 35px;
+		}
 	}
 }
 
-@mixin responsiveProgressBar {
-	@media screen and (max-width: 900px) {
-		max-width: 90%;
-	}
-	@media screen and (max-width: 400px) {
-		margin-top: -5rem;
-	}
-}
-
-@mixin responsiveOthersSkills {
-	@media screen and (max-width: 400px) {
-		margin-top: -5rem;
+@mixin responsiveGrid {
+	@media screen and (max-width: 500px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3,1fr);
+		margin-left: 20%;
 	}
 }
 
-@mixin responsiveOthersSkillsLi {
-	@media screen and (max-width: 400px) {
-		padding: 0.8rem;
+@mixin responsiveGridAbout {
+	@media screen and (max-width: 970px) {
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(3,1fr);
+		justify-items: center;
 	}
 }
 
-@mixin responsiveH3 {
-	@media screen and (max-width: 400px) {
-		font-size: 20px !important;
+@mixin responsiveSizeAbout {
+	@media screen and (max-width: 365px) {
+			font-size: 20px;
+	}
+}
+
+@mixin responsiveSizeAboutP {
+	@media screen and (max-width: 970px) {
+			text-align: center;
 	}
 }
 
@@ -129,12 +119,6 @@
 @mixin responsiveProjectsPage {
 	@media screen and (max-width: 400px) {
 		margin-top: 5rem;
-	}
-}
-
-@mixin responsiveProjectsTitle {
-	@media screen and (max-width: 400px) {
-		font-size: 25px;
 	}
 }
 
@@ -156,7 +140,7 @@
 	@media screen and (max-width: 530px) {
 		padding: 12px;
 		font-size: 14px;
-		margin-top: 1.8rem;
+		margin-top: 1.5rem;
 	}
 }
 
@@ -169,12 +153,6 @@
 }
 
 // Section
-
-@mixin responsiveBigScreen {
-	@media screen and (min-width: 1440px) {
-		padding-top: 20vh;
-	}
-}
 
 @mixin responsiveBigScreenImg {
 	@media screen and (min-width: 1440px) {

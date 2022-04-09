@@ -1,0 +1,29 @@
+.about {
+    padding-top: 5vh;
+    &__text {
+        @include responsiveAboutTitle;
+        p {
+            color: $font-soft;
+            font-size: 23px;
+            margin-top: 25px;
+        }
+    }
+        .about__list {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            margin-top: 4rem;
+            margin-bottom: 4rem;
+            @include responsiveGridAbout;
+            gap: 40px;
+            li {
+                h5 {
+                    font-size: 27px;
+                    @include responsiveSizeAbout;
+                }
+                p {
+                    margin-top: 10px;
+                    @include responsiveSizeAboutP;
+                }
+            }
+        }
+}

@@ -1,5 +1,4 @@
 .contact__form {
-	font-family: 'Helvetica Neue Light', 'Helvetica';
 	z-index: 9999;
 	width: 100vw;
 	height: 100vh;
@@ -37,7 +36,6 @@
 		p:nth-child(1) {
 			@include responsiveFormP;
 			border-radius: 3px;
-			font-family: 'Helvetica Neue Bold', 'Helvetica';
 			font-size: 16px;
 			background-color: $red;
 			padding: 18px;
@@ -49,7 +47,6 @@
 	}
 	form {
 		input {
-			font-family: 'Helvetica', 'Arial';
 			font-size: 16px;
 			color: $white;
 			padding: 15px;
@@ -70,7 +67,6 @@
 		.input__submit {
 			border-radius: 3px;
 			padding: 10px;
-			font-family: 'Helvetica Neue Bold', 'Helvetica';
 			border: none;
 			max-width: 20%;
 			cursor: pointer;
@@ -79,7 +75,6 @@
 		}
 	}
 	textarea {
-		font-family: 'Helvetica', 'Arial';
 		font-size: 16px;
 		resize: none;
 		color: $white;

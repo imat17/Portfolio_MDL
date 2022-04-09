@@ -16,12 +16,18 @@ a {
 	color: $white;
 }
 
+main {
+	max-width: 1280px;
+    width: 100%;
+    margin: auto;
+}
+
 body {
 	background-color: $bg-black;
 	color: $white;
 	letter-spacing: 1px;
 	overflow-x: hidden;
-	// font-family: 'Space Grotesk', sans-serif;
+	font-family: 'Space Grotesk', sans-serif;
 }
 
 body::-webkit-scrollbar {
@@ -34,28 +40,25 @@ input:focus {
 	outline: none;
 }
 
-@font-face {
-	font-family: 'Helvetica Neue Bold';
-	src: url('./fonts/HelveticaNeueCyr-Bold.woff2') format('woff2');
-}
-
-@font-face {
-	font-family: 'Helvetica Neue Light';
-	src: url('./fonts/Helvetica\ Neue\ Light.woff2') format('woff2');
-}
-
 section {
-	min-width: 100vw;
 	min-height: 100vh;
+	@media screen and (max-width: 1280px) {
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
 }
 
 h2 {
-	color: $red;
-	font-family: 'Helvetica Neue Bold', 'Helvetica';
-	font-size: 30px;
-	padding-top: 10rem;
-	text-align: center;
-	@include responsiveBigScreen;
+	font-size: 60px;
+}
+
+h2, h5 {
+	width: max-content;
+	background: $font-degrade;
+	background-clip: border-box;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-align: left;
 }
 
 .reveal {

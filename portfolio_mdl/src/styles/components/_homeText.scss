@@ -1,36 +1,31 @@
 .container__text {
-	max-width: 65%;
-	margin-left: 80px;
-	padding-top: 300px;
+	padding-top: 280px;
 	@include responsiveHomeText;
-	font-family: 'Helvetica Neue Light', 'Helvetica';
-	p {
+	h2, p {
 		margin-bottom: 2rem;
 	}
-	p:nth-child(1) {
-		font-size: 4.5vw;
-		@include responsiveHelloText;
-	}
 	p:nth-child(2) {
-		@include responsiveIamText;
 		font-size: 30px;
-		animation: focus-in-expand 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.4s both;
+		@include responsiveP1size;
+		// animation: focus-in-expand 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 1.4s both;
 	}
 	p:nth-child(3) {
-		@include responsiveInfoText;
-		font-size: 20px;
-		animation: focus-in-expand 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.4s both;
+		@include responsiveP2size;
+		font-size: 23px;
+		// animation: focus-in-expand 1.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) 2.4s both;
 	}
 }
 
 .typewriter__container {
 	display: flex;
-	justify-content: flex-start;
-	.typewriter p {
+	flex-wrap: wrap;
+	.typewriter h2 {
+		font-size: 80px;
 		overflow: hidden;
 		white-space: nowrap;
 		position: relative;
-		animation: typing 1.8s steps(29);
+		// animation: typing 1.8s steps(29);
+		@include responsiveTitleSize;
 	}
 	.typewriter p::after {
 		content: '';
@@ -49,7 +44,7 @@
 	z-index: -1;
 	position: absolute;
 	width: 60vw;
-	right: 50px;
+	right: -350px;
 	top: -45px;
 	@include responsiveImg;
 	img {

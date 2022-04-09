@@ -3,13 +3,14 @@
 @import './settings';
 @import './utils/keyframes';
 
+@import './components/colorbar';
 @import './components/navbar';
 @import './components/contact';
 @import './components/social';
 @import './pages/home';
 @import './pages/skills';
-@import './components/progressBar';
-@import './components/otherSkills';
+@import './components/technologies';
+@import './components/about';
 @import './components/homeText';
 @import './pages/projects';
 @import './components/projectsCards';

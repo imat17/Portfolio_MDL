@@ -20,7 +20,7 @@ const Header = ({ modalToggle, setModalToggle }) => {
 					<div className='navbar__mobile'>
 						<ul className='ul__mobile'>
 							<a href='#section__two' className='anim-1'>
-								<li onClick={(e) => setToggle(!toggle)}>COMPETENCES</li>
+								<li onClick={(e) => setToggle(!toggle)}>A PROPOS</li>
 							</a>
 							<a href='#section__three' className='anim-2'>
 								<li onClick={(e) => setToggle(!toggle)}>PROJETS</li>
@@ -47,7 +47,7 @@ const Header = ({ modalToggle, setModalToggle }) => {
 			<ul>
 				<a href='#section__two'>
 					<li>
-						COMPETENCES
+						A PROPOS
 						<p className='border'></p>
 					</li>
 				</a>

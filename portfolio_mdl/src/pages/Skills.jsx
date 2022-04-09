@@ -1,18 +1,15 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import SkillsList from '../components/SkillsList';
+import Technologies from '../components/Technologies';
+import About from '../components/About';
 
 const Skills = () => {
 	const { ref, inView } = useInView({ triggerOnce: true });
 
 	return (
 		<section id='section__two'>
-			<div className='about'>
-				<h2 ref={ref} className={inView ? 'reveal' : ''}>
-					Mes compétences
-				</h2>
-			</div>
-			<SkillsList />
+			<Technologies />
+			<About />
 		</section>
 	);
 };

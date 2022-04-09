@@ -1,6 +1,7 @@
 import React, { useState, useRef, useCallback } from 'react';
 import ProjectsPerso from '../components/ProjectsPerso';
 import ProjectsPro from '../components/ProjectsPro';
+import Colorbar from '../components/Colorbar';
 import { useInView } from 'react-intersection-observer';
 
 const Projects = () => {
@@ -21,7 +22,6 @@ const Projects = () => {
 
 	const pro = document.querySelector('#pro');
 	const perso = document.querySelector('#perso');
-	const border = document.querySelector('.border');
 
 	const handleProject = (e) => {
 		if (e.target.id === 'perso') {
@@ -46,10 +46,11 @@ const Projects = () => {
 	const breakPoints = [
 		{ width: 1, itemsToShow: 1 },
 		{ width: 550, itemsToShow: 1, itemsToScroll: 1, pagination: false },
-		{ width: 850, itemsToShow: 1 },
-		{ width: 1150, itemsToShow: 2, itemsToScroll: 1 },
+		{ width: 850, itemsToShow: 2, itemsToScroll: 2 },
+		{ width: 1150, itemsToShow: 2, itemsToScroll: 2 },
 		{ width: 1450, itemsToShow: 2 },
 		{ width: 1750, itemsToShow: 3 },
+		{ width: 2250, itemsToShow: 4 },
 	];
 
 	const projectsToggle = () => {
@@ -62,18 +63,20 @@ const Projects = () => {
 
 	return (
 		<section id='section__three' ref={setRefs}>
-			<h2 className={inView ? 'reveal' : ''}>Mes réalisations</h2>
-			<div className='projects__choise'>
-				<p id='perso' className={inView ? 'anim__left' : ''} ref={ref} onClick={handleProject}>
-					Personnelles
-					<p className='border'></p>
-				</p>
-				<p id='pro' className={inView ? 'anim__right' : ''} ref={ref} onClick={handleProject}>
-					Formation
-					<p className='border'></p>
-				</p>
+			<div className="container">
+				<h2 className={inView ? 'reveal' : ''}>
+					<Colorbar />
+					Réalisations</h2>
+				<div className='projects__choise'>
+					<p id='perso' className={inView ? 'anim__left' : ''} ref={ref} onClick={handleProject}>
+						Personnelles
+					</p>
+					<p id='pro' className={inView ? 'anim__right' : ''} ref={ref} onClick={handleProject}>
+						Formation
+					</p>
+				</div>
+				{projectsToggle()}
 			</div>
-			{projectsToggle()}
 		</section>
 	);
 };

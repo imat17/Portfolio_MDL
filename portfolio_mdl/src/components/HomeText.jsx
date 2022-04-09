@@ -7,17 +7,17 @@ const HomeText = () => {
 			<div className='container__text'>
 				<div className='typewriter__container'>
 					<div className='typewriter'>
-						<p>Bienvenue sur mon portfolio !</p>
+						<h2>Bienvenue sur<br/>mon portfolio !</h2>
 					</div>
 				</div>
-				<p>Je suis Matisse Davaille-Leroy, développeur React.</p>
+				<p>Je suis Matisse Davaille-Leroy, développeur web.</p>
 				<p>
-					Sur ce site, vous pouvez voir mes compétences et mes projets personnels / de formation.
+					Sur ce site, vous pouvez voir mes compétences et mes projets personnels / de formation.<br/>
 					N'hésitez pas à télécharger mon CV et à me contacter.
 				</p>
 			</div>
 			<div className='letter'>
-				<img src={M} alt='' />
+				<img src={M} alt='logo' />
 			</div>
 		</>
 	);
