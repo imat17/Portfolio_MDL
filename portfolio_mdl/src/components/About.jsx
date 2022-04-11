@@ -11,7 +11,7 @@ const About = () => {
 						Evolution
 					</h2>
 					<p>
-						Ma curiosité et ma passion pour le développement me pousse à me perfectionner
+						Ma curiosité et ma passion pour le développement me poussent à me perfectionner
 						<br />
 						sur certaines technologies mais également à augmenter mon panel de compétences.
 					</p>

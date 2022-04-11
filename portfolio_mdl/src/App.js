@@ -1,31 +1,23 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Social from './components/Social';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Skills from './pages/Skills';
 import Projects from './pages/Projects';
-import Contact from './components/Contact';
+import Contact from './pages/Contact';
 
 const App = () => {
-	const [modalToggle, setModalToggle] = useState(false);
-
-	const displayModal = () => {
-		if (modalToggle === true) {
-			return <Contact modalToggle={modalToggle} setModalToggle={setModalToggle} />;
-		} else {
-			return;
-		}
-	};
+	
 	return (
 		<>
-			<Navbar modalToggle={modalToggle} setModalToggle={setModalToggle} />
+			<Navbar/>
 			<main>
-				{displayModal()}
 				<Social />
 				<div className='container__global'>
 					<Home />
 					<Skills />
 					<Projects />
+					<Contact />
 				</div>
 			</main>
 		</>

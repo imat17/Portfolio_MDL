@@ -356,98 +356,97 @@ nav .nav__responsive img {
   animation-delay: 0.4s;
 }
 
-.contact__form {
+.confirm__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   z-index: 9999;
-  width: 100vw;
-  height: 100vh;
-  padding-top: 23vh;
-  top: 0;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  position: fixed;
+  width: 100%;
+  height: 60vh;
+  position: absolute;
+  top: 20%;
+  font-size: 40px;
+}
+
+#section__four {
+  position: relative;
+}
+#section__four .container__contact {
+  padding-top: 15vh;
+}
+#section__four .container__contact .contact__form {
+  margin-top: 5rem;
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: rgba(0, 0, 0, 0.75);
-  -webkit-animation: fadeIn 1.1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
-  animation: fadeIn 1.1s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 }
-.contact__form .form__container {
-  min-width: 45vw;
+#section__four .container__contact .contact__form .form__container {
+  min-width: 55vw;
 }
 @media screen and (max-width: 530px) {
-  .contact__form .form__container {
+  #section__four .container__contact .contact__form .form__container {
     max-width: 80vw;
   }
 }
-.contact__form button {
-  color: #f1f1f1;
-  position: absolute;
-  background-color: #af2847;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  cursor: pointer;
-  border: none;
-}
-.contact__form .contact__data {
+#section__four .container__contact .contact__form .contact__data {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-bottom: 50px;
 }
-.contact__form .contact__data p:nth-child(1) {
-  border-radius: 3px;
-  font-size: 16px;
-  background-color: #af2847;
-  padding: 18px;
-  margin-bottom: 35px;
+#section__four .container__contact .contact__form .contact__data h5 {
+  font-size: 27px;
 }
-@media screen and (max-width: 530px) {
-  .contact__form .contact__data p:nth-child(1) {
-    padding: 12px;
-    font-size: 14px;
-    margin-top: 1.5rem;
+@media screen and (max-width: 470px) {
+  #section__four .container__contact .contact__form .contact__data h5 {
+    font-size: 22px;
   }
 }
-.contact__form .contact__data p:nth-child(2) {
-  letter-spacing: 1px;
+@media screen and (max-width: 385px) {
+  #section__four .container__contact .contact__form .contact__data h5 {
+    font-size: 17px;
+  }
 }
-.contact__form form input {
+#section__four .container__contact .contact__form .contact__data p {
+  font-weight: bold;
+  margin-top: 15px;
+  font-size: 18px;
+}
+#section__four .container__contact .contact__form form input {
   font-size: 16px;
   color: #f1f1f1;
   padding: 15px;
   border-bottom: 1px solid #f1f1f1;
   background-color: transparent;
 }
-.contact__form form div {
+#section__four .container__contact .contact__form form div {
   display: flex;
   justify-content: space-between;
   max-width: 100%;
 }
-.contact__form form div input {
+#section__four .container__contact .contact__form form div input {
   width: 48%;
 }
-.contact__form form .input__email {
+#section__four .container__contact .contact__form form .input__email {
   width: 100%;
 }
-.contact__form form .input__submit {
-  border-radius: 3px;
-  padding: 10px;
+#section__four .container__contact .contact__form form .input__submit {
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
   border: none;
   max-width: 20%;
   cursor: pointer;
-  background-color: #af2847;
+  font-family: "Space Grotesk", sans-serif;
 }
 @media screen and (max-width: 530px) {
-  .contact__form form .input__submit {
+  #section__four .container__contact .contact__form form .input__submit {
     max-width: 35%;
     padding: 10px;
-    font-size: 12px;
+    font-size: 16px;
   }
 }
-.contact__form textarea {
+#section__four .container__contact .contact__form textarea {
   font-size: 16px;
   resize: none;
   color: #f1f1f1;
@@ -459,9 +458,8 @@ nav .nav__responsive img {
   padding: 2px;
 }
 
-.anim__form {
-  -webkit-animation: fadeOut 1.1s ease-out both;
-  animation: fadeOut 1.1s ease-out both;
+.active__opacity {
+  opacity: 0.2;
 }
 
 .social {
@@ -670,8 +668,9 @@ nav .nav__responsive img {
 }
 @media screen and (max-width: 575px) {
   .letter {
-    top: 77%;
-    width: 85vw;
+    top: 65%;
+    opacity: 0.8;
+    width: 100vw;
   }
 }
 .letter img {

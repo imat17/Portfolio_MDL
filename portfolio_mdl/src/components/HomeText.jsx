@@ -1,5 +1,6 @@
 import React from 'react';
 import M from '../images/icons/letter-m.png';
+import Colorbar from './Colorbar';
 
 const HomeText = () => {
 	return (
@@ -7,6 +8,7 @@ const HomeText = () => {
 			<div className='container__text'>
 				<div className='typewriter__container'>
 					<div className='typewriter'>
+						<Colorbar />
 						<h2>Bienvenue sur<br/>mon portfolio !</h2>
 					</div>
 				</div>

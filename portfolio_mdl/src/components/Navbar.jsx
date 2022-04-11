@@ -3,13 +3,8 @@ import Logo from '../images/logo_mdl.png';
 import List from '../images/icons/bars-solid.svg';
 import CV from '../images/CV-MATISSE.pdf';
 
-const Header = ({ modalToggle, setModalToggle }) => {
+const Header = () => {
 	const [toggle, setToggle] = useState(false);
-
-	const handleToggle = () => {
-		setToggle(!toggle);
-		setModalToggle(!modalToggle);
-	};
 
 	const handleNav = () => {
 		if (toggle === false) {
@@ -25,9 +20,9 @@ const Header = ({ modalToggle, setModalToggle }) => {
 							<a href='#section__three' className='anim-2'>
 								<li onClick={(e) => setToggle(!toggle)}>PROJETS</li>
 							</a>
-							<div className='anim-3'>
-								<li onClick={handleToggle}>CONTACT</li>
-							</div>
+							<a href='#section__four' className='anim-3'>
+								<li onClick={(e) => setToggle(!toggle)}>CONTACT</li>
+							</a>
 							<a href={CV} download className='anim-4'>
 								<li onClick={(e) => setToggle(!toggle)}>CV</li>
 							</a>
@@ -58,10 +53,12 @@ const Header = ({ modalToggle, setModalToggle }) => {
 					</li>
 				</a>
 
-				<li onClick={(e) => setModalToggle(!modalToggle)}>
-					CONTACT
-					<p className='border'></p>
-				</li>
+				<a href='#section__four'>
+					<li>
+						CONTACT
+						<p className='border'></p>
+					</li>
+				</a>
 
 				<a href={CV} download>
 					<li>

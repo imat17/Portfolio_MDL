@@ -71,8 +71,9 @@
 		left: 50%;
 	}
 	@media screen and (max-width: 575px) {
-		top: 77%;
-		width: 85vw;
+		top: 65%;
+		opacity: .8;
+		width: 100vw;
 	}
 }
 
@@ -148,7 +149,7 @@
 	@media screen and (max-width: 530px) {
 		max-width: 35%;
 		padding: 10px;
-		font-size: 12px;
+		font-size: 16px;
 	}
 }
 
