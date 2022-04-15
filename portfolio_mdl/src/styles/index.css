@@ -431,20 +431,22 @@ nav .nav__responsive img {
   width: 100%;
 }
 #section__four .container__contact .contact__form form .input__submit {
-  border-radius: 8px;
-  font-size: 20px;
-  font-weight: bold;
-  border: none;
-  max-width: 20%;
+  border-bottom: none;
+  font-family: "Space Grotesk", "sans-serif";
   cursor: pointer;
-  font-family: "Space Grotesk", sans-serif;
+  background-image: linear-gradient(to right, #616161 0%, #9bc5c3 51%, #616161 100%);
+  margin: 10px;
+  padding: 10px 35px;
+  text-align: center;
+  transition: 0.5s;
+  background-size: 200% auto;
+  font-size: 20px;
+  border-radius: 10px;
 }
-@media screen and (max-width: 530px) {
-  #section__four .container__contact .contact__form form .input__submit {
-    max-width: 35%;
-    padding: 10px;
-    font-size: 16px;
-  }
+#section__four .container__contact .contact__form form .input__submit:hover {
+  background-position: right center;
+  color: #fff;
+  text-decoration: none;
 }
 #section__four .container__contact .contact__form textarea {
   font-size: 16px;
@@ -776,11 +778,11 @@ nav .nav__responsive img {
 }
 .projects li .projects__img {
   padding-top: 2rem;
-  max-width: 40rem;
+  max-width: 50rem;
 }
 @media screen and (min-width: 1440px) {
   .projects li .projects__img {
-    max-width: 50rem;
+    max-width: 60rem;
   }
 }
 .projects li .projects__img img {

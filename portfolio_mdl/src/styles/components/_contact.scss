@@ -51,15 +51,23 @@
 					width: 100%;
 				}
 				.input__submit {
-					border-radius: 8px;
-					font-size: 20px;
-					font-weight: bold;
-					border: none;
-					max-width: 20%;
+					border-bottom: none;
+					font-family: 'Space Grotesk', 'sans-serif';
 					cursor: pointer;
-					@include responsiveFormSubmit;
-					font-family: 'Space Grotesk', sans-serif;
-				}
+					background-image: linear-gradient(to right, #616161 0%, #9bc5c3  51%, #616161  100%);
+				   	margin: 10px;
+				   	padding: 10px 35px;
+				   	text-align: center;
+				   	transition: 0.5s;
+				   	background-size: 200% auto;
+				   	font-size: 20px;      
+				   	border-radius: 10px;
+				 }
+				 .input__submit:hover {
+				   	background-position: right center; 
+				   	color: #fff;
+				   	text-decoration: none;
+				 }
 			}
 			textarea {
 				font-size: 16px;

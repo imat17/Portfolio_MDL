@@ -16,19 +16,19 @@ const Technologies = () => {
             <li>
                     <div>
                         <h4>Front-End</h4>
-                        <p>Expérience avec :<br />React<br/>Css/Sass<br/>Material.ui / Bootstrap</p>
+                        <p>React / React Native<br/>Css / Sass<br/>Material.ui / Tailwind</p>
                     </div>
                 </li>
                 <li>
                     <div>
                         <h4>Back-End</h4>
-                        <p>Expérience avec :<br />Node.js/Express<br/>Sql<br/>MongoDb</p>
+                        <p>Node.js/Express<br/>Sql<br/>MongoDb</p>
                     </div>
                 </li>
                 <li>
                     <div>
                         <h4>Others</h4>
-                        <p>Expérience en :<br />SEO<br/>Accessibilité<br />Anglais</p>
+                        <p>SEO<br/>Accessibilité<br />Anglais</p>
                     </div>
                 </li>
             </ul>

@@ -13,7 +13,7 @@ const Contact = () => {
 
     const contactForm = document.querySelector('.contact__form');
 
-    const [confirmToggle, setConfirmToggle] = useState(true);
+    const [confirmToggle, setConfirmToggle] = useState(false);
 
     const confirmDisplay = () => {
         if (confirmToggle === true ) {
