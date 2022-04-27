@@ -2,23 +2,25 @@ nav {
 	position: fixed;
 	z-index: 999;
 	width: 100%;
-	margin-top: 2rem;
 	box-shadow: 1px 7px 5px -1px rgba(0, 0, 0, 0.2);
+	padding-top: 2rem;
 	padding-bottom: 45px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 	.link__home {
 		position: absolute;
 		left: 3rem;
-		top: -0.4rem;
 		@include responsiveNavLogo;
 	}
+
 	ul {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		@include responsiveNavbarDisplay;
+
 		li {
 			transition: transform 0.3s;
 			margin-left: 3rem;
@@ -27,13 +29,16 @@ nav {
 			cursor: pointer;
 			@include responsiveNavbarSize;
 		}
+
 		li:hover {
 			transform: scale(1.08);
+
 			.border {
 				visibility: visible;
 				animation: scale-up-hor-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
 			}
 		}
+
 		.border {
 			margin-top: 5px;
 			border-bottom: 2px solid $red;
@@ -41,38 +46,54 @@ nav {
 			visibility: hidden;
 		}
 	}
-	.nav__responsive {
-		cursor: pointer;
-		position: absolute;
-		right: 3rem;
-		@include navbarMobileDisplay;
-		img {
-			width: 35px;
-		}
-	}
 }
 
-.navbar__mobile {
-	@include navbarMobileDisplay;
-	position: absolute;
-	top: 1.5rem;
-	right: 0;
-	z-index: 999;
-	width: 150px;
-	.ul__mobile {
-		font-weight: lighter;
-		margin-top: 20px;
+.nav__responsive {
+	z-index: 1001;
+	cursor: pointer;
+	position: fixed;
+	right: 48px;
+	top: 20px;
+	img {
+		width: 35px;
+	}
+	.navbar__mobile {
+		background-color: rgba(0, 0, 0, 0.85);
+		position: fixed;
+		z-index: 999;
+		right: 0;
+		width: 100vw;
+		height: 100vh;
 		display: flex;
-		flex-direction: column;
-		a,
-		div {
-			padding-bottom: 3px;
-			-webkit-animation-name: fadeIn;
-			animation-name: fadeIn;
-			-webkit-animation-duration: 1s;
-			animation-duration: 1s;
-			-webkit-animation-fill-mode: both;
-			animation-fill-mode: both;
+		justify-content: center;
+		align-items: center;
+		.ul__mobile {
+			font-size: 24px;
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			margin-top: -85px;
+
+			a,
+			div {
+				padding-bottom: 35px;
+				-webkit-animation-name: fadeIn;
+				animation-name: fadeIn;
+				-webkit-animation-duration: 1.5s;
+				animation-duration: 1.5s;
+				-webkit-animation-fill-mode: both;
+				animation-fill-mode: both;
+			}
+
+			p {
+				border: 1px solid white;
+				border-radius: 20px;
+				padding: 5px;
+				font-size: 35px;
+				position: absolute;
+				top: 20px;
+				right: 46px;
+			}
 		}
 	}
 }

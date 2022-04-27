@@ -54,7 +54,8 @@ h2 {
   font-size: 60px;
 }
 
-h2, h5 {
+h2,
+h5 {
   width: max-content;
   background: linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
   background-clip: border-box;
@@ -243,8 +244,8 @@ nav {
   position: fixed;
   z-index: 999;
   width: 100%;
-  margin-top: 2rem;
   box-shadow: 1px 7px 5px -1px rgba(0, 0, 0, 0.2);
+  padding-top: 2rem;
   padding-bottom: 45px;
   display: flex;
   justify-content: center;
@@ -253,7 +254,6 @@ nav {
 nav .link__home {
   position: absolute;
   left: 3rem;
-  top: -0.4rem;
 }
 @media screen and (max-width: 615px) {
   nav .link__home {
@@ -284,6 +284,11 @@ nav ul li {
     margin-right: 0.5rem;
   }
 }
+@media screen and (max-width: 615px) {
+  nav ul li {
+    font-size: 24px;
+  }
+}
 nav ul li:hover {
   transform: scale(1.08);
 }
@@ -297,47 +302,53 @@ nav ul .border {
   width: 100%;
   visibility: hidden;
 }
-nav .nav__responsive {
+
+.nav__responsive {
+  z-index: 1001;
   cursor: pointer;
-  position: absolute;
-  right: 3rem;
+  position: fixed;
+  right: 48px;
+  top: 20px;
 }
-@media screen and (min-width: 615px) {
-  nav .nav__responsive {
-    display: none;
-  }
-}
-nav .nav__responsive img {
+.nav__responsive img {
   width: 35px;
 }
-
-.navbar__mobile {
-  position: absolute;
-  top: 1.5rem;
-  right: 0;
+.nav__responsive .navbar__mobile {
+  background-color: rgba(0, 0, 0, 0.85);
+  position: fixed;
   z-index: 999;
-  width: 150px;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-@media screen and (min-width: 615px) {
-  .navbar__mobile {
-    display: none;
-  }
-}
-.navbar__mobile .ul__mobile {
-  font-weight: lighter;
-  margin-top: 20px;
+.nav__responsive .navbar__mobile .ul__mobile {
+  font-size: 24px;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  margin-top: -85px;
 }
-.navbar__mobile .ul__mobile a,
-.navbar__mobile .ul__mobile div {
-  padding-bottom: 3px;
+.nav__responsive .navbar__mobile .ul__mobile a,
+.nav__responsive .navbar__mobile .ul__mobile div {
+  padding-bottom: 35px;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
+  -webkit-animation-duration: 1.5s;
+  animation-duration: 1.5s;
   -webkit-animation-fill-mode: both;
   animation-fill-mode: both;
+}
+.nav__responsive .navbar__mobile .ul__mobile p {
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 5px;
+  font-size: 35px;
+  position: absolute;
+  top: 20px;
+  right: 46px;
 }
 
 .anim-1 {
@@ -436,11 +447,11 @@ nav .nav__responsive img {
   cursor: pointer;
   background-image: linear-gradient(to right, #616161 0%, #9bc5c3 51%, #616161 100%);
   margin: 10px;
-  padding: 10px 35px;
+  padding: 9px 30px;
   text-align: center;
   transition: 0.5s;
   background-size: 200% auto;
-  font-size: 20px;
+  font-size: 18px;
   border-radius: 10px;
 }
 #section__four .container__contact .contact__form form .input__submit:hover {
@@ -653,7 +664,7 @@ nav .nav__responsive img {
   right: -350px;
   top: -45px;
 }
-@media screen and (max-width: 1250px) {
+@media screen and (max-width: 1280px) {
   .letter {
     width: 65vw;
     left: 350px;

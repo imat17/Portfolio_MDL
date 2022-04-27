@@ -6,6 +6,9 @@
 		margin-left: 0.5rem;
 		margin-right: 0.5rem;
 	}
+	@media screen and (max-width: 615px) {
+		font-size: 24px;
+	}
 }
 
 @mixin responsiveNavbarDisplay {
@@ -17,12 +20,6 @@
 @mixin responsiveNavLogo {
 	@media screen and (max-width: 615px) {
 		position: initial;
-	}
-}
-
-@mixin navbarMobileDisplay {
-	@media screen and (min-width: 615px) {
-		display: none;
 	}
 }
 
@@ -59,7 +56,7 @@
 }
 
 @mixin responsiveImg {
-	@media screen and (max-width: 1250px) {
+	@media screen and (max-width: 1280px) {
 		width: 65vw;
 		left: 350px;
 		top: 50px;

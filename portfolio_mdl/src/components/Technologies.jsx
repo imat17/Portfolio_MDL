@@ -22,13 +22,13 @@ const Technologies = () => {
                 <li>
                     <div>
                         <h4>Back-End</h4>
-                        <p>Node.js/Express<br/>Sql<br/>MongoDb</p>
+                        <p>Node.js / Express<br/>Sql<br/>MongoDb</p>
                     </div>
                 </li>
                 <li>
                     <div>
                         <h4>Others</h4>
-                        <p>SEO<br/>Accessibilité<br />Anglais</p>
+                        <p>SEO<br/>Git / GitHub<br/>Accessibilité<br />Anglais</p>
                     </div>
                 </li>
             </ul>

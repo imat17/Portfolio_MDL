@@ -18,8 +18,8 @@ a {
 
 main {
 	max-width: 1280px;
-    width: 100%;
-    margin: auto;
+	width: 100%;
+	margin: auto;
 }
 
 body {
@@ -52,7 +52,8 @@ h2 {
 	font-size: 60px;
 }
 
-h2, h5{
+h2,
+h5 {
 	width: max-content;
 	background: $font-degrade;
 	background-clip: border-box;
