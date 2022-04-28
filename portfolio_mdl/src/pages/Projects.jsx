@@ -28,36 +28,26 @@ const Projects = () => {
 			setProjectPerso(true);
 			setProjectPro(false);
 			perso.classList.remove('anim__left');
-			pro.classList.add('active__opacity');
-			perso.classList.remove('active__opacity');
-			perso.classList.add('active__title');
-			pro.classList.remove('active__title');
+			pro.classList.add('choise__opacity');
+			perso.classList.remove('choise__opacity');
+			perso.classList.add('choise__title');
+			pro.classList.remove('choise__title');
 		} else if (e.target.id === 'pro') {
 			setProjectPro(true);
 			setProjectPerso(false);
 			pro.classList.remove('anim__right');
-			perso.classList.add('active__opacity');
-			pro.classList.remove('active__opacity');
-			pro.classList.add('active__title');
-			perso.classList.remove('active__title');
+			perso.classList.add('choise__opacity');
+			pro.classList.remove('choise__opacity');
+			pro.classList.add('choise__title');
+			perso.classList.remove('choise__title');
 		}
 	};
 
-	const breakPoints = [
-		{ width: 1, itemsToShow: 1 },
-		{ width: 550, itemsToShow: 1, itemsToScroll: 1, pagination: false },
-		{ width: 850, itemsToShow: 2, itemsToScroll: 2 },
-		{ width: 1150, itemsToShow: 2, itemsToScroll: 2 },
-		{ width: 1450, itemsToShow: 2 },
-		{ width: 1750, itemsToShow: 3 },
-		{ width: 2250, itemsToShow: 4 },
-	];
-
 	const projectsToggle = () => {
-		if (projectPro === true) {
-			return <ProjectsPro breakPoints={breakPoints} />;
-		} else if (projectPerso === true) {
-			return <ProjectsPerso breakPoints={breakPoints} />;
+		if (projectPro) {
+			return <ProjectsPro />;
+		} else if (projectPerso) {
+			return <ProjectsPerso />;
 		}
 	};
 
@@ -68,10 +58,10 @@ const Projects = () => {
 					<Colorbar />
 					Réalisations</h2>
 				<div className='projects__choise'>
-					<p id='perso' className={inView ? 'anim__left' : ''} ref={ref} onClick={handleProject}>
+					<p id='perso' className={`choise__title ${inView ? 'anim__left' : ''}`} ref={ref} onClick={handleProject}>
 						Personnelles
 					</p>
-					<p id='pro' className={inView ? 'anim__right' : ''} ref={ref} onClick={handleProject}>
+					<p id='pro' className={`choise__opacity ${inView ? 'anim__right' : ''}`} ref={ref} onClick={handleProject}>
 						Formation
 					</p>
 				</div>
@@ -82,3 +72,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

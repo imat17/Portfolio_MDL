@@ -9,13 +9,13 @@ const HomeText = () => {
 				<div className='typewriter__container'>
 					<div className='typewriter'>
 						<Colorbar />
-						<h2>Bienvenue sur<br/>mon portfolio !</h2>
+						<h2>Bienvenue sur<br />mon portfolio !</h2>
 					</div>
 				</div>
 				<p>Je suis Matisse Davaille-Leroy, développeur web.</p>
 				<p>
-					Sur ce site, vous pouvez voir mes compétences et mes projets personnels / de formation.<br/>
-					N'hésitez pas à télécharger mon CV et à me contacter.
+					Sur ce site, vous pouvez voir mes compétences et mes projets personnels / de formation.<br />
+					N'hésitez pas à télécharger mon CV et à me contacter. <br /> Bonne visite !
 				</p>
 			</div>
 			<div className='letter'>

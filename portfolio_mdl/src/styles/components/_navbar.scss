@@ -49,14 +49,17 @@ nav {
 }
 
 .nav__responsive {
-	z-index: 1001;
 	cursor: pointer;
 	position: fixed;
 	right: 48px;
 	top: 20px;
-	img {
-		width: 35px;
+
+	.nav__logo {
+		img {
+			width: 35px;
+		}
 	}
+
 	.navbar__mobile {
 		background-color: rgba(0, 0, 0, 0.85);
 		position: fixed;
@@ -67,6 +70,7 @@ nav {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
 		.ul__mobile {
 			font-size: 24px;
 			display: flex;

@@ -43,6 +43,9 @@ const NavDesk = () => {
 const NavMob = ({ toggle, setToggle }) => {
 	return (
 		<nav className='nav__small' style={{ backgroundColor: !toggle ? 'rgba(0, 0, 0, 0.85)' : '' }}>
+			<a className="nav__logo" href="#section__one">
+				<img src={Logo} alt='Logo' title='logo mdl' />
+			</a>
 			<div className="nav__responsive">
 				<img src={toggle ? List : Cross} alt="list icon" onClick={() => setToggle(!toggle)} />
 				{!toggle && (
@@ -69,9 +72,8 @@ const NavMob = ({ toggle, setToggle }) => {
 }
 
 const Header = () => {
-	const [toggle, setToggle] = useState(false);
-
-	const [screenSize, setScreenSize] = useState(undefined);
+	const [toggle, setToggle] = useState(true);
+	const [screenSize, setScreenSize] = useState(window.innerWidth);
 
 	useEffect(() => {
 
@@ -79,7 +81,7 @@ const Header = () => {
 		window.addEventListener('resize', handleResize);
 
 		return () => window.removeEventListener('resize', handleResize);
-	});
+	}, [screenSize]);
 
 	if (screenSize > 614) {
 		return (

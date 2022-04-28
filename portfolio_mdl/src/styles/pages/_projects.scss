@@ -1,8 +1,10 @@
 #section__three {
 	@include responsiveAboutTitle;
 	@include responsiveProjectsPage;
+
 	.container {
 		padding-top: 15vh;
+
 		.projects__choise {
 			width: 100%;
 			justify-content: space-evenly;
@@ -10,6 +12,8 @@
 			display: flex;
 			margin-top: 4rem;
 			font-size: 20px;
+			@include responsiveProjectChoise;
+
 			p {
 				cursor: pointer;
 			}
@@ -17,12 +21,12 @@
 	}
 }
 
-.active__title {
-	transform: scale(1.2)!important;
+.choise__title {
+	transform: scale(1.2);
 }
 
-.active__opacity {
-	opacity: 0.60;
+.choise__opacity {
+	opacity: 0.60 !important;
 }
 
 

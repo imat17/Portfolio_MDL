@@ -56,10 +56,9 @@
 }
 
 @mixin responsiveImg {
-	@media screen and (max-width: 1280px) {
+	@media screen and (max-width: 1700px) {
 		width: 65vw;
 		left: 350px;
-		top: 50px;
 	}
 	@media screen and (max-width: 1020px) {
 		width: 75vw;
@@ -123,6 +122,18 @@
 @mixin responsiveSlideBtn {
 	@media screen and (max-width: 500px) {
 		display: none;
+	}
+}
+
+@mixin responsiveProjectChoise {
+	@media screen and (max-width: 345px) {
+		font-size: 16px;
+	}
+}
+
+@mixin responsiveGrid {
+	@media screen and (max-width: 690px) {
+		grid-template-columns: 1fr;
 	}
 }
 
